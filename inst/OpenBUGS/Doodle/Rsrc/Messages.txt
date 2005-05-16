@@ -1,0 +1,4 @@
+DoodleParser1	"loop index must be a name"
+DoodleParser2	"unknown type of density"
+DoodleParser3	"unknown type of link function"
+END

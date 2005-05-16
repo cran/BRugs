@@ -1,0 +1,221 @@
+modelCheck(s)
+"BugsCmds.SetFilePath('^0' );BugsCmds.ParseGuard;BugsCmds.ParseFile"
+"BugsEmbed.SetFilePath( '^0' );BugsEmbed.ParseGuard;BugsEmbed.Parse"
+
+modelData(s)
+"BugsCmds.SetFilePath( '^0' );BugsCmds.LoadDataGuard;BugsCmds.LoadDataFile"
+"BugsEmbed.SetFilePath( '^0' );BugsEmbed.LoadDataGuard;BugsEmbed.LoadData"
+
+modelCompile ()	
+"BugsCmds.CompileGuard;BugsCmds.Compile"
+"BugsEmbed.CompileGuard;BugsEmbed.Compile(1)"
+  
+modelCompile(i)
+"BugsCmds.CompileGuard;BugsCmds.specificationDialog.numChains  := ^0;BugsCmds.Compile"
+"BugsEmbed.CompileGuard; BugsEmbed.Compile(^0)"  
+
+modelInits(s)	
+"BugsCmds.SetFilePath( '^0' );BugsCmds.LoadInitsGuard;BugsCmds.LoadInitsFile"
+"BugsEmbed.SetFilePath('^0' );BugsEmbed.LoadInitsGuard;BugsEmbed.LoadInits"
+
+modelInits(s,i)	
+"BugsCmds.SetFilePath( '^0' );BugsCmds.LoadInitsGuard ;BugsCmds.specificationDialog.chain := ^1);BugsCmds.LoadInitsFile"
+"BugsEmbed.SetFilePath( '^0' );BugsEmbed.LoadInitsGuard ;BugsEmbed.chain := ^1;BugsEmbed.LoadInits"
+ 
+modelGenInits()	
+"BugsCmds.GenerateInitsGuard;BugsCmds.GenerateInits"
+"BugsEmbed.GenerateInitsGuard;BugsEmbed.GenerateInits" 
+ 
+modelUpdate(i)	
+"BugsCmds.UpdateGuard;BugsCmds.updateDialog.updates  := ^0;BugsCmds.Update"
+"BugsEmbed.UpdateGuard ;BugsEmbed.Update(^0)"
+ 
+modelUpdate(i, i)
+"BugsCmds.UpdateGuard ;BugsCmds.updateDialog.updates  := ^0; BugsCmds.updateDialog.thin := ^1; BugsCmds.Update"
+"BugsEmbed.UpdateGuard ;BugsEmbed.thin  := ^1; BugsEmbed.Update(^0)" 
+
+modelUpdate(i, s)
+"BugsCmds.UpdateGuard ;BugsCmds.updateDialog.updates  := ^0; BugsCmds.updateDialog.overRelax := ^1; BugsCmds.Update"
+"BugsEmbed.UpdateGuard ;BugsDialog.updateDialog.overRelax  := ^1; BugsEmbed.Update(^0)" 
+ 
+modelUpdate(i, i, s)	
+"BugsCmds.UpdateGuard ;BugsCmds.updateDialog.updates  := ^0;BugsCmds.updateDialog.thin := ^1; 
+BugsCmds.updateDialog.overRelax := ^2; BugsCmds.Update"
+"BugsEmbed.UpdateGuard ;BugsEmbed.thin  := ^1;BugsEmbed.overRelax  := ^2; BugsEmbed.Update(^0)" 
+
+modelChains()
+"BugsEmbed.UpdateGuard ;BugsCmds.WriteChains"
+""
+
+modelChains(s)	
+""
+"BugsEmbed.UpdateGuard ;BugsEmbed.WriteChains('^0')"
+
+modelSetSeed(i)	
+"BugsCmds.seedDialog.seedNum := 1; BugsCmds.seedDialog.newSeed := ^0; BugsCmds.SetSeedGuard; BugsCmds.SetSeed"
+"BugsEmbed.seedNum := 1; BugsEmbed.newSeed := ^0; BugsEmbed.SetSeedGuard; BugsEmbed.SetSeed"
+
+modelSetSeed(i, i)	
+"BugsCmds.seedDialog.seedNum := ^0; BugsCmds.seedDialog.newSeed := ^1; BugsCmds.SetSeedGuard; BugsCmds.SetSeed"
+"BugsEmbed.seedNum := ^0; BugsEmbed.newSeed := ^1;BugsEmbed.SetSeedGuard; BugsEmbed.SetSeed"
+
+modelGetSeed()	
+"BugsCmds.GetSeed"
+"BugsEmbed.GetSeed"
+
+modelDisplay(s)	
+"BugsCmds.SetDisplay('^0')"
+""
+
+modelPrecision(i)
+"BugsDisplay.displayDialog.precision :=  ^0; BugsMappers.SetPrec(^0)"
+"BugsMappers.SetPrec(^0)"
+
+modelQuit()
+"HostMenus.Exit "
+""
+
+modelModules()
+"BugsCmds.Modules"
+"BugsEmbed.Modules"
+
+modelSaveLog(s)	
+"BugsCmds.SaveLog('^0' )"
+"BugsFiles.SaveLog('^0' )"
+
+modelSetAP(s, i)
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.AdaptivePhaseGuard;UpdaterMethods.SetAdaptivePhase(^1)"
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.AdaptivePhaseGuard;UpdaterMethods.SetAdaptivePhase(^1)"
+
+modelSetIts(s, i)
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.IterationsGuard;UpdaterMethods.SetIterations(^1)"
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.IterationsGuard;UpdaterMethods.SetIterations(^1)"
+
+modelSetOR(s, i)
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.OverRelaxationGuard;UpdaterMethods.SetOverRelaxation(^1)"
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.OverRelaxationGuard;UpdaterMethods.SetOverRelaxation(^1)"
+
+modelEnable(s)
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.Enable"
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.Enable"
+
+modelDisable(s)
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.Disable"
+"UpdaterMethods.SetFactory('^0');UpdaterMethods.Disable"
+
+
+samplesBeg(i)	
+"SamplesCmds.dialog.beg :=  ^0"
+"SamplesEmbed.beg :=  ^0"
+ 
+samplesEnd(i)	
+"SamplesCmds.dialog.end := ^0"
+"SamplesEmbed.end := ^0"
+
+samplesThin(i )	
+"SamplesCmds.dialog.thin :=  ^0"
+"SamplesEmbed.thin :=  ^0" 
+
+samplesFirstChain(i)	
+"SamplesCmds.dialog.firstChain :=  ^0"
+"SamplesEmbed.firstChain :=  ^0" 
+ 
+samplesLastChain(i)	
+"SamplesCmds.dialog.lastChain := ^0"
+"SamplesEmbed.lastChain := ^0"
+
+samplesSet(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.SetGuard;SamplesCmds.Set"
+"SamplesEmbed.SetVariable('^0');SamplesEmbed.SetGuard;SamplesEmbed.Set"
+
+samplesClear(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.HistoryGuard;SamplesCmds.Clear" 
+"SamplesEmbed.SetVariable('^0');SamplesEmbed.HistoryGuard;SamplesEmbed.Clear"
+
+samplesStats(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.StatsGuard;SamplesCmds.Stats"  
+"SamplesEmbed.SetVariable('^0');SamplesEmbed.StatsGuard;SamplesEmbed.Stats"  
+
+samplesCoda(s)
+"SamplesCmds.SetVariable('^0');SamplesCmds.StatsGuard;SamplesCmds.CODA()"
+""
+
+samplesCoda(s, s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.StatsGuard;SamplesCmds.CODAFiles('^1')"
+"SamplesEmbed.SetVariable('^0');SamplesEmbed.StatsGuard;SamplesEmbed.CODA ('^1')"
+
+samplesDensity(s)	
+"SamplesCmds.SetVariable('^0' );SamplesCmds.StatsGuard;SamplesDensity.Install;SamplesCmds.Plot('')"
+""
+
+samplesAutoC(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.StatsGuard;SamplesCorrelat.Install;SamplesCmds.Plot('')"
+""
+  
+samplesTrace(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.StatsGuard;SamplesTrace.Install;SamplesCmds.Plot('')"
+""
+ 
+samplesHistory(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.StatsGuard;SamplesHistory.Install;SamplesCmds.Plot('')"
+""
+
+samplesQuantiles(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.StatsGuard;SamplesQuantiles.Install;SamplesCmds.Plot('')"
+""
+ 
+samplesBgr(s)	
+"SamplesCmds.SetVariable('^0');SamplesCmds.BGRGuard;SamplesDiagnostics.Install;SamplesCmds.Plot('')"
+""  
+
+summarySet(s)	
+"SummaryCmds.SetVariable('^0');SummaryCmds.SetGuard;SummaryCmds.Set"
+"SummaryEmbed.SetVariable('^0');SummaryEmbed.SetGuard;SummaryEmbed.Set" 
+ 
+summaryStats(s)	
+"SummaryCmds.SetVariable('^0' );SummaryCmds.StatsGuard;SummaryCmds.Stats"
+"SummaryEmbed.SetVariable('^0' );SummaryEmbed.StatsGuard;SummaryEmbed.Stats" 
+ 
+summaryMean(s)	
+"SummaryCmds.SetVariable('^0');SummaryCmds.StatsGuard;SummaryCmds.Means"
+"SummaryEmbed.SetVariable('^0');SummaryEmbed.StatsGuard;SummaryEmbed.Means" 
+ 
+summaryClear(s)	
+"SummaryCmds.SetVariable('^0');SummaryCmds.StatsGuard;SummaryCmds.Clear"
+"SummaryEmbed.SetVariable('^0');SummaryEmbed.StatsGuard;SummaryEmbed.Clear"
+
+ranksSet(s)	
+"RanksCmds.SetVariable('^0');RanksCmds.SetGuard;RanksCmds.Set "
+"RanksEmbed.SetVariable('^0');RanksEmbed.SetGuard;RanksEmbed.Set"
+
+ranksStats(s)	
+"RanksCmds.SetVariable('^0' );RanksCmds.StatsGuard;RanksCmds.Stats"
+"RanksEmbed.SetVariable('^0' );RanksEmbed.StatsGuard;RanksEmbed.Stats" 
+
+ranksClear(s)	
+"RanksCmds.SetVariable('^0');RanksCmds.StatsGuard;RanksCmds.Clear"
+"RanksEmbed.SetVariable('^0');RanksEmbed.StatsGuard;RanksEmbed.Clear"
+ 
+ranksHistogram(s)	
+"RanksCmds.SetVariable('^0');RanksDialog.StatsGuard;RanksCmds.Draw"
+"" 
+
+dicSet()	
+"DevianceCmds.SetGuard;DevianceCmds.Set"
+"BugsEmbed.SetVariable('*');DevianceEmbed.SetGuard ;DevianceEmbed.Set "
+
+dicStats()	
+"DevianceCmds.StatsGuard;DevianceCmds.Stats"
+"BugsEmbed.SetVariable('*');DevianceEmbed.StatsGuard ;DevianceEmbed.Stats" 
+
+dicClear ()
+"DevianceCmds.StatsGuard ;DevianceCmds.Clear"
+"BugsEmbed.SetVariable('*');DevianceEmbed.StatsGuard ;DevianceEmbed.Clear"
+
+
+INIT()
+"BugsGrammar.LoadGrammar('Spatial/Rsrc/Grammar.txt');MathLincon.Install;BugsTexts.ShowMsg('Welome to OpenBUGS 2.10')"
+"BugsGrammar.LoadGrammar('Spatial/Rsrc/Grammar.txt');MathLincon.Install;BugsFiles.ShowMsg('Welome to OpenBUGS 2.10')"
+
+END
+

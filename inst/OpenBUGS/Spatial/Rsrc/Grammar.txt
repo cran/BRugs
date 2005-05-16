@@ -1,0 +1,19 @@
+"car.normal"	"SpatialCARNormal.Install"
+"car.l1"	"SpatialCARl1.Install"
+
+"mv.car"	"SpatialMVCAR.InstallCon"
+"max.bound"	"SpatialBound.InstallMax"
+"min.bound"	"SpatialBound.InstallMin"
+"car.proper"	"SpatialCARProper.Install"
+
+"spatial.disc"	"SpatialDiscKrig.Install"
+"spatial.exp"	"SpatialExpKrig.Install"
+"spatial.matern"	"SpatialMaternKrig.Install"
+
+"spatial.pred"	"SpatialStrucMVN.InstallPred"
+"spatial.unipred"	"SpatialStrucMVN.InstallPredUni"
+
+"dpois.conv"	"SpatialPoissconv.Install"
+
+END
+

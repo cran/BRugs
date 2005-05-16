@@ -1,0 +1,9 @@
+"CorrelEmbed:NotInitialized"	"model must be initialized"
+"CorrelEmbed:Adapting"	"model must not be adating"
+"CorrelEmbed:NotMonitored"	"sample monitor not set for ^0"
+
+"CorrelCmds:NotInitialized"	"model must be initialized"
+"CorrelCmds:Adapting"	"model must not be adating"
+"CorrelCmds:NotMonitored"	"sample monitor not set for ^0"
+
+END

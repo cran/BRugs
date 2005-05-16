@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir $DPKG/libs
+cp ./inst/OpenBUGS/brugs.dll $DPKG/libs/BRugs.dll

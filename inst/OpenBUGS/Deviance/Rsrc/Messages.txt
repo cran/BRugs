@@ -1,0 +1,17 @@
+"DevianceEmbed:NoDeviance"	"can not calculate deviance for this model"
+"DevianceEmbed:AlreadyMonitored"	"DIC already monitored"
+"DevianceEmbed:NotMonitored"	"DIC monitor not set"
+"DevianceEmbed:NoIterations"	"no updates since DIC monitor set"
+"DevianceEmbed:NotInitialized"	"model must be initialized before DIC an be monitored"
+"DevianceEmbed:Adapting"	"DIC can not be monitored when model in adapting phase"
+"DevianceEmbed:NotObserved" "^0 is not observed"
+
+"DevianceCmds:NoDeviance"	"can not calculate deviance for this model"
+"DevianceCmds:AlreadyMonitored"	"DIC already monitored"
+"DevianceCmds:NotMonitored"	"DIC monitor not set"
+"DevianceCmds:NoIterations"	"no updates since DIC monitor set"
+"DevianceCmds:NotInitialized"	"model must be initialized before DIC an be monitored"
+"DevianceCmds:Adapting"	"DIC can not be monitored when model in adapting phase"
+"DevianceEmbed:NotObserved" "^0 is not observed"
+
+END	
