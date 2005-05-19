@@ -1,0 +1,2 @@
+echo "Package 'BRugs' currently only works under Windows.\nIt is supposed to work under Linux in future releases."
+exit 1

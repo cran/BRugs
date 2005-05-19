@@ -1,0 +1,76 @@
+dbern	"GraphBern.Install"
+dbeta	"GraphBeta.Install"
+dbin	"GraphBinomial.Install"
+dcat	"GraphCat.Install"
+dchisqr	"GraphChisqr.Install"
+ddexp	"GraphDbexp.Install"
+dexp	"GraphExp.Install"
+df	"GraphF.Install"
+dflat	"GraphFlat.Install"
+dgamma	"GraphGamma.Install"
+"gen.gamma"	"GraphGengamma.Install"
+dgeom	"GraphGeometric.Install"
+dhypo	"GraphHypergeometric.Install"
+dlnorm	"GraphLognorm.Install"
+dlogis	"GraphLogistic.Install"
+dnegbin	"GraphNegbin.Install"
+dnorm	"GraphNormal.Install"
+dpar	"GraphPareto.Install"
+dpois	"GraphPoisson.Install"
+polygene	"GraphPolygene.Install"
+predictive	"GraphPredictive.Install"
+dt	"GraphT.Install"
+dtrap	"GraphTrapezium.Install"
+dunif	"GraphUniform.Install"
+dweib	"GraphWeibull.Install"
+dweib3	"GraphWeibull3.Install"
+
+ddirch	"GraphDirichlet.Install"
+dmulti	"GraphMultinom.Install"
+dmnorm	"GraphMVNormal.Install"
+dmt	"GraphMVT.Install"
+dwish	"GraphWishart.Install"
+
+founder	"GraphFounder.Install"
+mendelian	"GraphMendelian.Install"
+recessive	"GraphRecessive.Install"
+
+inprod	"GraphInprod.Install"
+inverse	"GraphInverse.Install"
+prod	"GraphProduct.Install"
+mean	"GraphSumation.InstallMean"
+sum	"GraphSumation.InstallSum"
+sd	"GraphSumation.InstallSd"
+logdet	"GraphLogdet.Install"
+
+cut	"GraphCut.Install"
+"p.value"	"GraphPValue.Install"
+
+kepler	"GraphKepler.Install"
+gammap "GraphGammap.Install"
+"interp.lin"	"GraphTable.Install"
+
+exp	"GraphLog.Install"
+phi	"GraphProbit.Install"
+log 	"GraphLog.Install"
+logit	"GraphLogit.Install"
+cloglog	"GraphCloglog.Install"
+probit	"GraphProbit.Install"
+
+"stoch.trend"	"GraphStochtrend.Install"
+
+"re.normal"	"GraphRENormal.Install"
+
+ranked	"GraphRanks.InstallRanked"
+rank	"GraphRanks.InstallRank"
+
+ode	"GraphODElang.Install(MathRungeKutta.Install)"
+
+solution	"GraphFunctional.Install(MathAESolver.InstallPegasus)"
+integral	"GraphFunctional.Install(MathIntegrate.InstallRomberg)"
+
+geometric.mean	"GraphScalartemp1.Install"
+matrix.pow	"GraphVectortemp1.Install"
+
+"eigen.vals"	"GraphEigenvals.Install"
+END

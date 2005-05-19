@@ -1,0 +1,21 @@
+"RanksEmbed:MonitorCleared"	"monitored cleared"
+"RanksEmbed:MonitorSet"	"monitor set"
+"RanksEmbed:NotInitialized"	"model must be initialized before monitors used"
+"RanksEmbed:NotVariable"	"^0 is not a variable in the model"
+"RanksEmbed:NotVector"	"^0 is not a vector"
+"RanksEmbed:Adapting"	"inference can not be made when sampler is in adaptive phase"
+"RanksEmbed:NotSet"	"no monitor set for variable ^0"
+"RanksEmbed:NoMonitors"	"no monitors set"
+"RanksEmbed:AlreadySet"	"monitor already set"
+
+"RanksCmds:MonitorCleared"	"monitored cleared"
+RanksCmds:MonitorSet"	"monitor set"
+"RanksCmds:NotInitialized"	"model must be initialized before monitors used"
+"RanksCmds:NotVariable"	"^0 is not a variable in the model"
+"RanksCmds:NotVector"	"^0 is not a vector"
+"RanksCmds:Adapting"	"inference can not be made when sampler is in adaptive phase"
+"RanksCmds:NotSet"	"no monitor set for variable ^0"
+"RanksCmds:NoMonitors"	"no monitors set"
+"RanksCmds:AlreadySet"	"monitor already set"
+
+END

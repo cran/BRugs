@@ -1,0 +1,19 @@
+"SummaryEmbed:MonitorCleared"	"monitored cleared"
+"SummaryEmbed:MonitorSet"	"monitor set"
+"SummaryEmbed:NotInitialized"	"model must be initialized before monitors used"
+"SummaryEmbed:NotVariable"	"^0 is not a variable in the model"
+"SummaryEmbed:Adapting"	"inference can not be made when sampler is in adaptive phase"
+"SummaryEmbed:NotSet"	"no monitor set for variable ^0"
+"SummaryEmbed:NoMonitors"	"no monitors set"
+"SummaryEmbed:AlreadySet"	"monitor already set"
+
+"SummaryCmds:MonitorCleared"	"monitored cleared"
+SummaryCmds:MonitorSet"	"monitor set"
+"SummaryCmds:NotInitialized"	"model must be initialized before monitors used"
+"SummaryCmds:NotVariable"	"^0 is not a variable in the model"
+"SummaryCmds:Adapting"	"inference can not be made when sampler is in adaptive phase"
+"SummaryCmds:NotSet"	"no monitor set for variable ^0"
+"SummaryCmds:NoMonitors"	"no monitors set"
+"SummaryCmds:AlreadySet"	"monitor already set"
+
+END

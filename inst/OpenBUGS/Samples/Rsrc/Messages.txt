@@ -1,0 +1,21 @@
+"SamplesEmbed:MonitorCleared"	"monitored cleared"
+"SamplesEmbed:CODAFilesWritten"	"CODA files written"
+"SamplesEmbed:MonitorSet"	"monitor set"
+"SamplesEmbed:NotInitialized"	"model must be initialized before monitors used"
+"SamplesEmbed:NotVariable"	"^0 is not a variable in the model"
+"SamplesEmbed:Adapting"	"inference can not be made when sampler is in adaptive phase"
+"SamplesEmbed:NotSet"	"no monitor set for variable ^0"
+"SamplesEmbed:NoMonitors"	"no monitors set"
+"SamplesEmbed:OnlyOneChain"	"bgr statistic can not be calculated only one chain"
+
+"SamplesCmds:MonitorCleared"	"monitored cleared"
+"SamplesCmds:CODAFilesWritten"	"CODA files written"
+"SamplesCmds:MonitorSet"	"monitor set"
+"SamplesCmds:NotInitialized"	"model must be initialized before monitors used"
+"SamplesCmds:NotVariable"	"^0 is not a variable in the model"
+"SamplesCmds:Adapting"	"inference can not be made when sampler is in adaptive phase"
+"SamplesCmds:NotSet"	"no monitor set for variable ^0"
+"SamplesCmds:NoMonitors"	"no monitors set"
+"SamplesCmds:OnlyOneChain"	"bgr statistic can not be calculated only one chain"
+
+END

@@ -1,0 +1,18 @@
+useDynLib(BRugs)
+export(BRugsFit, bugsData, bugsInits, buildMCMC, currentValues,
+dicClear, dicSet, dicStats,
+getGraphObj, getNumChains,
+getUpdaterObj, help.BRugs, help.WinBUGS, loadModule,
+modelAdaptivePhase, modelCheck, modelCompile, modelData,
+modelGenInits, modelGetSeed, modelInits, modelIteration,
+modelModules, modelNames, modelPrecision, modelSaveState,
+modelSetAP, modelSetIts, modelSetOR, modelSetSeed,
+modelUpdate, plotAutoC, plotBgr, plotDensity,
+plotHistory, ranksClear, ranksSet, ranksStats,
+samplesAutoC, samplesBgr, samplesClear, samplesCoda,
+samplesCorrel, samplesDensity, samplesGetBeg, samplesGetEnd,
+samplesGetFirstChain, samplesGetLastChain, samplesGetThin, samplesHistory,
+samplesMonitors, samplesSample, samplesSet, samplesSetBeg,
+samplesSetEnd, samplesSetFirstChain, samplesSetLastChain, samplesSetThin,
+samplesSize, samplesStats, setValues, summaryClear,
+summarySet, summaryStats)
