@@ -23,4 +23,7 @@ simulation may be \sQuote{tuned} somewhat via these three functions.
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
-
+\concept{update}
+\concept{adaptive Phase}
+\concept{iteration}
+\concept{overRelaxation}

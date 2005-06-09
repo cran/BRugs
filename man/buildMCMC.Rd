@@ -24,4 +24,9 @@ An object of class \code{\link[coda]{mcmc.list}} which is a list containing \cod
     If the arguments are left at their defaults the whole sample for all chains will be used for calculation.}
 \seealso{\code{\link[coda]{mcmc.list}}, \code{\link[coda]{mcmc}}, \code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
+\concept{MCMC}
+\concept{OpenBUGS}
+\concept{coda}
+\concept{sample}
+
 

@@ -25,4 +25,5 @@ When the model has been successfully compiled, \sQuote{model compiled} message s
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
+\concept{compile}
 

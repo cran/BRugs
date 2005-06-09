@@ -15,3 +15,4 @@ help.WinBUGS()
 }
 } 
 \keyword{documentation}
+\concept{help}

@@ -17,3 +17,4 @@ formatdata(datalist)
 }
 \seealso{The main functions to be called by the user are \code{\link{bugsData}} and \code{\link{bugsInits}}.}
 \keyword{internal}
+\concept{data}

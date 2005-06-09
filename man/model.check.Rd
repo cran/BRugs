@@ -18,3 +18,4 @@ If an attempt is made to execute this function in an inappropriate context the g
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
+\concept{check}
