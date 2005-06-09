@@ -31,3 +31,5 @@ In M.I. Jordan (Ed.): \emph{Learning in Graphical Models}, Kluwer Academic Publi
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
+\concept{update}
+\concept{iteration}

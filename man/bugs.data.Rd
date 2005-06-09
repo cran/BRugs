@@ -17,3 +17,4 @@ bugsData(data, fileName = file.path(getwd(), "data.txt"), digits = 5)
 }
 \seealso{\code{\link{BRugs}}}
 \keyword{file}
+\concept{data}

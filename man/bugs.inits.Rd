@@ -19,4 +19,5 @@ bugsInits(inits, numChains = 1, fileName, digits = 5)
 }
 \seealso{\code{\link{BRugs}}}
 \keyword{file}
+\concept{init}
 

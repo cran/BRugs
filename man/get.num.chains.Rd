@@ -10,3 +10,4 @@ Returns the number of chains from the current simulation.
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
+\concept{chain}

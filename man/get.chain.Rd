@@ -9,4 +9,4 @@ getChain()
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
 \keyword{internal}
-
+\concept{chain}

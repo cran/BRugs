@@ -69,3 +69,6 @@ help.BRugs()
 }
 \keyword{interface}
 \keyword{documentation}
+\concept{OpenBUGS}
+\concept{WinBUGS}
+\concept{MCMC}

@@ -12,4 +12,7 @@ modelGetSeed()
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
-
+\concept{update}
+\concept{iteration}
+\concept{seed}
+\concept{random}

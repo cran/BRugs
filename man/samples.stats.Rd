@@ -41,3 +41,8 @@ samplesStats(node, beg = samplesGetBeg(), end = samplesGetEnd(),
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
 \keyword{univar}
+\concept{WinBUGS}
+\concept{OpenBUGS}
+\concept{chain}
+\concept{update}
+\concept{iteration}

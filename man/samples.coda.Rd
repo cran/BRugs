@@ -34,5 +34,6 @@ Prints \sQuote{CODA files written}.
 \keyword{interface}
 \keyword{IO}
 \keyword{file}
-
+\concept{coda}
+\concept{sample}
 

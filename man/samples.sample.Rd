@@ -17,4 +17,8 @@ Values of the stored sample.
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}
+\concept{OpenBUGS}
+\concept{chain}
+\concept{update}
+\concept{iteration}
 

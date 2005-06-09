@@ -47,4 +47,6 @@ BRugsFit(data = "ratsdata.txt", inits = "ratsinits.txt",
                                     package = "BRugs"))
 }
 \keyword{interface}
-
+\concept{OpenBUGS}
+\concept{WinBUGS}
+\concept{MCMC}
