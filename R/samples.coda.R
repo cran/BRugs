@@ -8,10 +8,9 @@
     stop("'node' must be character of length 1")
   if(!is.character(stem) || length(stem)!=1)
     stop("'stem' must be character of length 1")
-  path <- dirname(stem)
-  path <- if(path == ".") getwd() else path
-  stem <- basename(stem)
-  
+  stem <- if(dirname(stem) == ".") 
+    file.path(getwd(), basename(stem))
+
   oldBeg <- samplesGetBeg()
   oldEnd <- samplesGetEnd()
   oldFirstChain <- samplesGetFirstChain()
@@ -32,12 +31,10 @@
   thin <- max(c(thin, 1))
   samplesSetThin(thin)
   command <- paste("SamplesEmbed.SetVariable(", sQuote(node),
-    ");SamplesEmbed.StatsGuard", "SamplesEmbed.CODA(", 
+    ");SamplesEmbed.StatsGuard;", "SamplesEmbed.CODA(", 
     sQuote(stem), ")")
+
   .C("CmdInterpreter", as.character(command), nchar(command), 
     integer(1), PACKAGE="BRugs")
-    
-  codafiles <- dir(tempdir(), pattern = paste("^", stem, "CODA", sep=""))
-  file.copy(file.path(tempdir(), codafiles), file.path(path, codafiles), overwrite = TRUE)
   buffer()
 }

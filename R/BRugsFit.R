@@ -19,7 +19,7 @@ function(modelFile, data, inits, numChains = 3, parametersToSave,
     modelGenInits()
   }
   else{
-    if(is.function(inits) || (is.character(inits) && !any(file.exists(inits))))
+    if(is.list(inits) || is.function(inits) || (is.character(inits) && !any(file.exists(inits))))
         inits <- bugsInits(inits = inits, numChains = numChains, digits = digits)
     print(inits)
     modelInits(inits)
