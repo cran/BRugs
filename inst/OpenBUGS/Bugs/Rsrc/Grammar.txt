@@ -24,6 +24,8 @@ dtrap	"GraphTrapezium.Install"
 dunif	"GraphUniform.Install"
 dweib	"GraphWeibull.Install"
 dweib3	"GraphWeibull3.Install"
+dGEV	"GraphGEV.Install"
+generic	"GraphGeneric.Install"
 
 ddirch	"GraphDirichlet.Install"
 dmulti	"GraphMultinom.Install"
@@ -73,4 +75,6 @@ geometric.mean	"GraphScalartemp1.Install"
 matrix.pow	"GraphVectortemp1.Install"
 
 "eigen.vals"	"GraphEigenvals.Install"
+sort	"GraphRanks.InstallSort"
+
 END

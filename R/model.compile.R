@@ -6,7 +6,7 @@ function(numChains = 1)
         stop("numChains ", "must be numeric")
     numChains <- as.integer(numChains)
     command <- paste("BugsEmbed.CompileGuard",              
-        ";BugsEmbed.Compile(", as.character(numChains), ")", sep = "")
+        ";BugsEmbed.numChains :=", as.character(numChains), "; BugsEmbed.Compile", sep = "")
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
     samplesSetFirstChain(1)
     samplesSetLastChain(numChains)

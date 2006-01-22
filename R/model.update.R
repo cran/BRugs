@@ -13,7 +13,8 @@ function(numUpdates, thin = 1, overRelax = FALSE)
     command <- paste("BugsEmbed.UpdateGuard",
         ";BugsEmbed.thin := ", thin,
         ";BugsEmbed.overRelax := ", as.integer(overRelax),
-        ";BugsEmbed.Update(", numUpdates,")")
+        ";BugsEmbed.updates := ", numUpdates,
+        ";BugsEmbed.Update")
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
     buffer()
 }

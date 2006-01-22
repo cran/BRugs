@@ -63,6 +63,7 @@ BugsNodes5	"multiple definitions of node ^0"
 BugsNodes6	"vector valued relation ^0 must involve consecutive elements of variable"
 BugsNodes7	"multiple definitions of node ^0"
 BugsNodes8	"expected multivariate node"
+BugsNodes9	"unable to create stochastic node ^0 with these options"
 
 BugsParser1	"unknown type of logical function"
 BugsParser2	"link function cannot be used on right hand side"
@@ -214,5 +215,5 @@ BugsVariables2	"missing closing square bracket ]"
 "BugsEmbed:AlreadyInits"	"model is already initialized"
 "BugsEmbed:NotInits"	"model must be initialized before updating"
 "BugsEmbed:SeedZero"	"seed of random number generator must not be zero"
-
+"BugsEmbed:chainsWrittenOut"	"chains written out"
 END
