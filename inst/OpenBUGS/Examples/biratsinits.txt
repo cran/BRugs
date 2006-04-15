@@ -1,4 +1,4 @@
-list(mu.beta = c(0,0), tauC = 1,
+	list(mu.beta = c(0,0), tauC = 1,
 		      beta = structure(
 				.Data = c(100,6,100,6,100,6,100,6,100,6,
 		               100,6,100,6,100,6,100,6,100,6,

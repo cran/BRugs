@@ -29,7 +29,7 @@ thin = samplesGetThin())
                          median=NULL, val97.5pc=NULL, start = NULL, sample=NULL)
     for(i in seq(along=nodeName)){
         command <- paste("SamplesEmbed.SetVariable(", nodeName[i], 
-        ");SamplesEmbed.StatsGuard;", "SamplesEmbed.Stats")
+        ");SamplesEmbed.StatsGuard;SamplesEmbed.Stats")
         .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
         buffer <- file.path(tempdir(), "buffer.txt")
         rlb <- readLines(buffer)

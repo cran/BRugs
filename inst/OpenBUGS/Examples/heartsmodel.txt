@@ -1,4 +1,3 @@
-
 	model 
 	{
 		for (i in 1 : N) {
@@ -13,5 +12,6 @@
 		logit(p) <- alpha
 		alpha ~ dnorm(0,1.0E-4)
 		beta <- exp(alpha) 
-		logit(theta) <- delta delta ~ dnorm(0, 1.0E-4)
+		logit(theta) <- delta 
+		delta ~ dnorm(0, 1.0E-4)
 	}

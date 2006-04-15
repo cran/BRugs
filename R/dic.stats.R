@@ -2,7 +2,7 @@
 function()
 #   Calculate dic statistics
 {
-    command <- "DevianceEmbed.StatsGuard;DevianceEmbed.Stats"
+    command <- "DevianceEmbed.SetVariable('*');DevianceEmbed.StatsGuard;DevianceEmbed.Stats"
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
     buffer <- file.path(tempdir(), "buffer.txt")
     rlb <- readLines(buffer)

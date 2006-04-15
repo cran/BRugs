@@ -1,4 +1,4 @@
-list(x = c(8.0, 15.0, 22.0, 29.0, 36.0), N = 30, T = 5,
+	list(x = c(8.0, 15.0, 22.0, 29.0, 36.0), N = 30, T = 5,
 		Omega = structure(.Data = c(200, 0, 0, 0.2), .Dim = c(2, 2)),	
 		mean = c(0,0),
 		prec = structure(.Data = c(1.0E-6, 0, 0, 1.0E-6), .Dim = c(2, 2)),

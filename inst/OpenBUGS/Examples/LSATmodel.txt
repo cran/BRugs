@@ -2,11 +2,15 @@
 	{
 	# Calculate individual (binary) responses to each test from multinomial data
 		for (j in 1 : culm[1]) {
-			for (k in 1 : T) {  r[j, k] <- response[1, k] }
+			for (k in 1 : T) {  
+				r[j, k] <- response[1, k] 
+			}
 		}
 		for (i in 2 : R) {
 			for (j in culm[i - 1] + 1 : culm[i]) {
-				for (k in 1 : T) {  r[j, k] <- response[i, k] }
+				for (k in 1 : T) {  
+					r[j, k] <- response[i, k] 
+				}
 			}
 		}
 	# Rasch model
@@ -18,8 +22,9 @@
 			theta[j] ~ dnorm(0, 1)
 		}
 	# Priors
-		for (k in 1:T) {
-			alpha[k] ~ dnorm(0, 0.0001);   a[k] <- alpha[k] - mean(alpha[])
+		for (k in 1 : T) {
+			alpha[k] ~ dnorm(0, 0.0001)
+			a[k] <- alpha[k] - mean(alpha[])
 		}
-		beta ~ dnorm(0,0.0001) I(0,)
+		beta ~ dnorm(0,0.0001) I(0, )
 	}

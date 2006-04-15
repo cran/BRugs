@@ -1,4 +1,5 @@
-model {
+	model 
+	{
 		solution[1:n.grid, 1:dim] <- ode(init[1:dim], grid[1:n.grid], D(C[1:dim], t),  0, tol)
 
 		D(C[1], t) <- PER1 * C[7] - R * kT1 * C[1]
@@ -19,6 +20,8 @@ model {
 		PER6 <- Q6 / V6
 
 		Q4 <- Q3 + QHEP
-
-		for (i in 1:n.grid) {grid[i] <- 10 * (i - 1)}
+		
+		for (i in 1:n.grid) {
+			grid[i] <- 10 * (i - 1)
+		}
 	}

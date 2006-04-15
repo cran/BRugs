@@ -15,7 +15,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(BRugs)
-Welcome to BRugs running on OpenBUGS version 2.1.1 beta
+Welcome to BRugs running on OpenBUGS version 2.2.0 beta
 > 
 > BRugsFit(data = "ratsdata.txt", inits = "ratsinits.txt", 
 +     para = c("alpha", "beta"), modelFile = "ratsmodel.txt", 

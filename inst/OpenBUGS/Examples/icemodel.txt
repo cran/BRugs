@@ -1,4 +1,4 @@
-model 
+	model 
 	{
 		for (i in 1:I)  {
 			cases[i]        ~ dpois(mu[i])

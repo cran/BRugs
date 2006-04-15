@@ -1,10 +1,9 @@
-	
 	model
 	{
-		for( i in 1 : batches ) {
-			m[i] ~ dnorm(theta, tau.btw)
-			for( j in 1 : samples ) {
-				y[i , j] ~ dnorm(m[i], tau.with)
+		for(i in 1 : batches) {
+			mu[i] ~ dnorm(theta, tau.btw)
+			for(j in 1 : samples) {
+				y[i , j] ~ dnorm(mu[i], tau.with)
 			}
 		}	
 		sigma2.with <- 1 / tau.with

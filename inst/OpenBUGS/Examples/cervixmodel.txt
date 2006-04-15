@@ -1,4 +1,4 @@
-model 
+	model 
 	{
 		for (i in 1 : N) {
 			x[i]   ~ dbern(q)         # incidence of HSV
@@ -17,6 +17,6 @@ model
 			}
 		}
 	# calculate gamma1 = P(x=1|d=0) and gamma2 = P(x=1|d=1) 
-	    gamma1 <- 1 / (1 + (1 + exp(beta0C + beta)) / (1 + exp(beta0C)) * (1 - q) / q)
-	    gamma2 <- 1 / (1 + (1 + exp(-beta0C - beta)) / (1 + exp(-beta0C)) * (1 - q) / q)
+		gamma1 <- 1 / (1 + (1 + exp(beta0C + beta)) / (1 + exp(beta0C)) * (1 - q) / q)
+		gamma2 <- 1 / (1 + (1 + exp(-beta0C - beta)) / (1 + exp(-beta0C)) * (1 - q) / q)
 	}

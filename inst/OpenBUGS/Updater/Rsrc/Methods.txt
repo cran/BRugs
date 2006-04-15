@@ -1,34 +1,91 @@
-#UpdaterHybridglm.InstallChain 	#updater for chain graph prior and logit, loglinear or normal likelihood
-UpdaterChain.Install	#updater for chain graph prior
-#UpdaterHybridglm.Install 	#updater for logit, loglinear or normal random effects
-#UpdaterAMNLLS.InstallMarginal	#updater for non linear least squares with error variance integrated out
-#UpdaterAMNLLS.InstallCond	#updater for non linear least squares
-UpdaterMVNormal.Install	#updater for MVN conditional with mean identical to prior
-UpdaterMVNLinear.Install	#updater for MVN conditional with mean linear function of prior
-#UpdaterGLM.InstallNormal	#updates block of nodes with normal conditional
-UpdaterWishart.Install	#updates node with wishart conditional	
-UpdaterDirichlet.Install	#updates node with dirichlet conditional
-UpdaterDirichletprior.Install	#updates node with dirichlet prior
-UpdaterMultinomial.Install	#updates node with multinomial prior	
-#UpdaterAMblock.InstallGLM	#updates fixed effect block of nodes with logit, loglinear or normal conditional	
-UpdaterGLM.InstallGLM	#updates fixed effect block of nodes having logit, loglinear or normal conditional
-#UpdaterDFreeHybrid.Install	#updates fixed effect block of nodes at least one of which has a generic conditional	
-#UpdaterAMblock.InstallHomo	#updates fixed effect block of nodes all of which has a generic conditional	
-#UpdaterAMblock.InstallHetro	#updates fixed effect block of nodes at least one of which has a generic conditional	
-#UpdaterAMblock.InstallRE	#updater for generic random effects
-UpdaterNormal.Install	#updates node with normal conditional
-UpdaterGamma.Install	#updates node with gamma conditional
-UpdaterBeta.Install	#updates node with beta conditional
-UpdaterPareto.Install	#updates node with pareto conditional	
-UpdaterPoisson.Install	#updates node with poisson conditional	
-UpdaterForward.Install	#updter when no likelihood
-#UpdaterDescreteSlice.Install	#updater for descrete prior with finite range
-UpdaterCatagorical.Install	#updater for descrete prior with finite range	
-UpdaterMetbinomial.Install	#updater for descrete prior with infinite range
-UpdaterRejection.Install	#updater for logit or loglinear conditional
-#UpdaterSCAM.InstallDelayedB	#updater for generic distribution with support on part of real line
-#UpdaterSCAM.InstallDelayed	#updater for generic distribution with support on whole of real line
-UpdaterMetnormal.InstallStd	#updater for generic distribution with support on whole of real line
-#UpdaterGriddy.Install	#updater for generic distribution with bounded support
-UpdaterSlice.Install	#updater for non integer valued prior
+#updater when no likelihood	
+UpdaterForward.Install	
+
+#updates node with multinomial prior
+UpdaterMultinomial.Install	
+
+#
+#	descrete updaters
+#
+#updates node with poisson conditional	
+UpdaterPoisson.Install	
+#updater for descrete prior with finite range
+#UpdaterDescreteSlice.Install	
+#updater for descrete prior with finite range
+UpdaterCatagorical.Install	
+#updater for descrete prior with infinite range	
+UpdaterMetbinomial.Install	
+
+#
+#	conjugate multivariate updaters
+#
+#updater for MVN conditional with mean identical to prior
+UpdaterMVNormal.Install	
+#updater for MVN conditional with mean linear function of prior
+UpdaterMVNLinear.Install	
+#updates node with wishart conditional
+UpdaterWishart.Install	
+#updates node with dirichlet conditional	
+UpdaterDirichlet.Install	
+#updates node with dirichlet prior
+UpdaterDirichletprior.Install	
+
+#
+#	updater for chain graph priors
+#
+#updater for chain graph prior and logit, loglinear or normal likelihood
+#UpdaterHybridglm.InstallChain 	
+#updater for chain graph prior
+UpdaterChain.Install	
+
+#updater for parameters of Kriging prior
+#UpdaterKrigparam.Install
+
+#
+#	block updaters
+#
+#updates fixed effect block of nodes with logit or  loglinear	
+UpdaterGLM.InstallGLM	
+
+#updates block of nodes with normal conditional
+#UpdaterGLM.InstallNormal	
+#updater for logit, loglinear or normal random effects
+#UpdaterHybridglm.Install 	
+#updater for non linear least squares with error variance integrated out
+#UpdaterAMNLLS.InstallMarginal	
+#updater for non linear least squares
+#UpdaterAMNLLS.InstallCond	
+#UpdaterAMblock.InstallGLM	
+#updates fixed effect block of nodes at least one of which has a generic conditional
+#UpdaterDFreeHybrid.Install	
+#updates fixed effect block of nodes all of which has a generic conditional	
+#UpdaterAMblock.InstallHomo	
+#updates fixed effect block of nodes at least one of which has a generic conditional	
+#UpdaterAMblock.InstallHetro	
+#updater for generic random effects	
+#UpdaterAMblock.InstallRE	
+
+#updates node with normal conditional
+UpdaterNormal.Install	
+#updates node with gamma conditional
+UpdaterGamma.Install	
+#updates node with beta conditional
+UpdaterBeta.Install	
+#updates node with pareto conditional
+UpdaterPareto.Install	
+#updater for logit or loglinear conditional
+UpdaterRejection.Install	
+#updater for generic distribution with support on part of real line
+#UpdaterSCAM.InstallDelayedB	
+#updater for generic distribution with support on whole of real line
+#UpdaterSCAM.InstallDelayed	
+#updater for generic distribution with support on whole of real line
+UpdaterMetnormal.InstallStd	
+#updater for any distribution with support on whole of real line
+#UpdaterMetnormal.InstallAnyStd	
+#updater for generic distribution with bounded support
+#UpdaterGriddy.Install	
+#updater for generic distribution
+UpdaterSlice.Install	
+
 END

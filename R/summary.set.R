@@ -4,7 +4,7 @@ function(node)
 {
     nodeName <- sQuote(node)
     for(i in seq(along=nodeName)){
-        command <- paste("SummaryEmbed.SetVariable(", nodeName[i], "); SummaryEmbed.SetGuard",
+        command <- paste("SummaryEmbed.SetVariable(", nodeName[i], "); SummaryEmbed.SetGuard;",
                                 "SummaryEmbed.Set")
         .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
         buffer <- file.path(tempdir(), "buffer.txt")
