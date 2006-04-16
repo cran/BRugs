@@ -11,7 +11,7 @@
 }
 
 ".onAttach" <- function(lib, pkg){
-    cat("Welcome to BRugs running on OpenBUGS version 2.1.1 beta", "\n")
+    cat("Welcome to BRugs running on OpenBUGS version 2.2.0 beta", "\n")
 }
 
 ".onUnload" <- function(libpath){

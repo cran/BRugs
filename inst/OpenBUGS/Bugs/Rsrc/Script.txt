@@ -151,6 +151,16 @@ modelDisable(s)
 "UpdaterMethods.SetFactory('^0');UpdaterMethods.Disable"
 "UpdaterMethods.SetFactory('^0');UpdaterMethods.Disable"
 
+#	enables dynamic compilation
+modelEnableDynamic()
+"BugsCmds.CompiledGuard; BugsCmds.EnableDynamic"
+"BugsEmbed.CompiledGuard; BugsEmbed.EnableDynamic"
+
+#	disables dynamic compilation
+modelDisableDynamic()
+"BugsCmds.CompiledGuard; BugsCmds.DisableDynamic"
+"BugsEmbed.CompiledGuard; BugsEmbed.DisableDynamic"
+
 #	sets the begin iteration for sample monitors to i
 samplesBeg(i)	
 "SamplesCmds.dialog.beg :=  ^0"
