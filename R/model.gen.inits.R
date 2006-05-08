@@ -5,5 +5,6 @@ function()
     command <- paste("BugsEmbed.GenerateInitsGuard;",  "BugsEmbed.GenerateInits")
     .C("CmdInterpreter", command, nchar(command), 
         integer(1), PACKAGE="BRugs")
-    buffer()
+    if(getOption("BRugsVerbose")) 
+        buffer()
 }

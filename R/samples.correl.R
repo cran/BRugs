@@ -34,5 +34,5 @@ thin = samplesGetThin())
     if (len > 1)
         as.matrix(read.table(buffer))
     else
-        cat(rlb, "\n")
+        message(rlb)
 }

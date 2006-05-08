@@ -6,5 +6,6 @@ function(node)
     command <- paste("RanksEmbed.SetVariable(", nodeName, "); RanksEmbed.SetGuard;",
                              "RanksEmbed.Set")
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    buffer()
+    if(getOption("BRugsVerbose")) 
+        buffer()
 }

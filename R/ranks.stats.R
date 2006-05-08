@@ -14,5 +14,5 @@ function(node)
     if (len > 1) 
         read.table(buffer)
     else
-        cat(rlb, "\n")
+        message(rlb)
 }

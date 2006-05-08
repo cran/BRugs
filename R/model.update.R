@@ -16,5 +16,6 @@ function(numUpdates, thin = 1, overRelax = FALSE)
         ";BugsEmbed.updates := ", numUpdates,
         ";BugsEmbed.Update")
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    buffer()
+    if(getOption("BRugsVerbose")) 
+        buffer()
 }

@@ -17,4 +17,4 @@ samplesGetFirstChain, samplesGetLastChain, samplesGetThin, samplesHistory,
 samplesMonitors, samplesSample, samplesSet, samplesSetBeg,
 samplesSetEnd, samplesSetFirstChain, samplesSetLastChain, samplesSetThin,
 samplesSize, samplesStats, setValues, summaryClear,
-summarySet, summaryStats)
+summarySet, summaryStats, writeModel)

@@ -12,5 +12,6 @@ function(fileName)
     command <- paste("BugsEmbed.SetFilePath(", sQuote(fileName), 
         ");BugsEmbed.ParseGuard;BugsEmbed.Parse", sep = "")
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    buffer()
+    if(getOption("BRugsVerbose")) 
+        buffer()
 }

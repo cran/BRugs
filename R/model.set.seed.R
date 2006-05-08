@@ -10,6 +10,9 @@ function(newSeed)
             ";BugsEmbed.SetRNGuard; BugsEmbed.SetRNState")
         res <- .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")[[3]]
     }
-    if(!res) cat("Seed successfully set\n")
-    else stop("Setting seed returned with an error.")
+    if(!res){
+        if(getOption("BRugsVerbose"))
+            message("Seed successfully set")
+    }else stop("Setting seed returned with an error.")
+    
 }    

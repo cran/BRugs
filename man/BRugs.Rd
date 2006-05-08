@@ -22,6 +22,9 @@ help.BRugs(browser = getOption("browser"))
     and those associated with making statistical inference. In general the R functions in BRugs correspond to the 
     command buttons and and text entry fields in the menus of WinBUGS. Each WinBUGS text entry field splits into two 
     R functions, one to set the quantity and the other to get the value of the quantity.
+    
+    Andrew Gelman suggests to use the function \code{bugs} in the \pkg{R2WinBUGS} package 
+    with argument \code{program="openbugs"} as a wrapper.
 }
 \section{Permission and Disclaimer}{
     BRugs is released under the GNU GENERAL PUBLIC LICENSE. 

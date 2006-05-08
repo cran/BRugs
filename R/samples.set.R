@@ -18,11 +18,13 @@ function(node)
         buffer <- file.path(tempdir(), "buffer.txt")
         rlb <- readLines(buffer)
         if(rlb == "") 
-            cat("either model has not been updated or variable", nodeName[i], "already set\n")
+            message("either model has not been updated or variable ", nodeName[i], " already set")
         else{
-            if(alreadySet)
-                cat("monitor for variable", nodeName[i], "already set\n")
-            else cat(rlb, "for variable", nodeName[i], "\n")
+            if(getOption("BRugsVerbose")){
+                if(alreadySet)
+                    message("monitor for variable ", nodeName[i], " already set")
+                else message(rlb, " for variable ", nodeName[i])
+            }
         }
     }
     invisible()

@@ -4,5 +4,6 @@
   command <- paste("BugsEmbed.UpdateGuard",
   ";BugsEmbed.WriteChains(", sQuote(stem), ")")
   .C("CmdInterpreter", as.character(command), nchar(command), integer(1), PACKAGE="BRugs")
-  buffer()
+  if(getOption("BRugsVerbose")) 
+      buffer()
 }

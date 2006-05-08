@@ -4,5 +4,6 @@ function(module)
 {
     command <- as.character(module)
     .C("Load", command, nchar(command), integer(1), PACKAGE="BRugs")
-    buffer()
+    if(getOption("BRugsVerbose")) 
+        buffer()
 }

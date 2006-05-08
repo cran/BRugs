@@ -16,9 +16,9 @@ function(node)
             result <- rbind(result, read.table(buffer))
         else{
             if(length(grep("val97.5pc", rlb)))
-                cat("Variable", nodeName[i], "has probably not been updated\n")
-            else
-                cat("Variable ", nodeName[i], ": ", rlb, "\n", sep = "")
+                message("Variable ", nodeName[i], " has probably not been updated")
+            else if(getOption("BRugsVerbose"))
+                message("Variable ", nodeName[i], ": ", rlb)
         }
     }
     return(result)

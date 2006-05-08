@@ -10,5 +10,6 @@ function(numChains = 1)
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
     samplesSetFirstChain(1)
     samplesSetLastChain(numChains)
-    buffer()
+    if(getOption("BRugsVerbose")) 
+        buffer()
 }
