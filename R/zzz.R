@@ -8,10 +8,12 @@
     tempDir <- gsub("\\\\", "/", tempdir())
     .C("Initialize", as.character(root), as.character(tempDir), 
         as.integer(len), nchar(tempDir), PACKAGE="BRugs")
+    if(is.null(getOption("BRugsVerbose")))
+        options("BRugsVerbose" = TRUE)
 }
 
 ".onAttach" <- function(lib, pkg){
-    cat("Welcome to BRugs running on OpenBUGS version 2.2.0 beta", "\n")
+    message("Welcome to BRugs running on OpenBUGS version 2.2.0 beta")
 }
 
 ".onUnload" <- function(libpath){

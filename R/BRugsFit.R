@@ -1,12 +1,17 @@
 BRugsFit <-
 function(modelFile, data, inits, numChains = 3, parametersToSave,
     nBurnin = 1000, nIter = 1000, nThin = 1,
-    DIC = TRUE, working.directory = NULL, digits = 5){
+    DIC = TRUE, working.directory = NULL, digits = 5, 
+    BRugsVerbose = getOption("BRugsVerbose")){
 
+  if(is.null(BRugsVerbose)) 
+      BRugsVerbose <- TRUE
+  op <- options("BRugsVerbose" = BRugsVerbose)
+  on.exit(options(op))
   if(!is.null(working.directory)){
       savedWD <- getwd()
       setwd(working.directory)
-      on.exit(setwd(savedWD))
+      on.exit(setwd(savedWD), add = TRUE)
   }
   if(!file.exists(modelFile)) stop(modelFile, " does not exist")
   if(file.info(modelFile)$isdir) stop(modelFile, " is a directory, but a file is required")  
@@ -21,7 +26,7 @@ function(modelFile, data, inits, numChains = 3, parametersToSave,
   else{
     if(is.list(inits) || is.function(inits) || (is.character(inits) && !any(file.exists(inits))))
         inits <- bugsInits(inits = inits, numChains = numChains, digits = digits)
-    print(inits)
+    if(BRugsVerbose) print(inits)
     modelInits(inits)
   }
   samplesSetThin(nThin)

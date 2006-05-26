@@ -4,5 +4,6 @@ function()
 {
     command <- "DevianceEmbed.SetVariable('*');DevianceEmbed.SetGuard;DevianceEmbed.Set"
     .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    buffer()
+    if(getOption("BRugsVerbose")) 
+        buffer()
 }

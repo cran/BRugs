@@ -13,6 +13,7 @@ function(fileName = "data.txt")
         command <- paste("BugsEmbed.SetFilePath(", sQuote(fileNm), 
             ");BugsEmbed.LoadDataGuard;BugsEmbed.LoadData", sep = "")
         .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-        buffer()
+        if(getOption("BRugsVerbose"))     
+            buffer()
     }
 }

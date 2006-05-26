@@ -9,10 +9,10 @@ function(node)
     rlb <- readLines(buffer)
     len <- length(rlb)
     if (len == 1 && rlb == "command is not allowed (greyed out)")
-        cat(rlb, "\n")
+        message(rlb)
     else{
         if(len == 0){
-            cat("model has probably not yet been updated\n")
+            message("model has probably not yet been updated")
             invisible("model has probably not yet been updated")
         }
         else

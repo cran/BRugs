@@ -9,7 +9,8 @@ function(node)
         .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
         buffer <- file.path(tempdir(), "buffer.txt")
         rlb <- readLines(buffer)
-        cat("Variable ", nodeName[i], ": ", rlb, "\n", sep = "")
+        if(getOption("BRugsVerbose"))
+            message("Variable ", nodeName[i], ": ", rlb)
     }
     invisible()
 }

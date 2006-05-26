@@ -23,8 +23,10 @@ function(fileName, chainNum = NULL)
         "); BugsEmbed.LoadInitsGuard; BugsEmbed.chain := ",
         as.character(chainNum[i]), "; BugsEmbed.LoadInits")
         .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-        cat("Initializing chain ", chainNum[i], ": ", sep="")
-        buffer()
+        if(getOption("BRugsVerbose")){
+            cat("Initializing chain ", chainNum[i], ": ", sep="")
+            buffer()
+        }
     }
     invisible()
 }

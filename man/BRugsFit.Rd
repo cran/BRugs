@@ -5,7 +5,8 @@
 \usage{
 BRugsFit(modelFile, data, inits, numChains = 3, parametersToSave,
     nBurnin = 1000, nIter = 1000, nThin = 1,
-    DIC = TRUE, working.directory = NULL, digits = 5)
+    DIC = TRUE, working.directory = NULL, digits = 5, 
+    BRugsVerbose = getOption("BRugsVerbose"))
 }
 \arguments{
 \item{modelFile}{File containing the model written in OpenBUGS code.}
@@ -33,12 +34,17 @@ BRugsFit(modelFile, data, inits, numChains = 3, parametersToSave,
     is explicitly given in those arguments.
     If \code{NULL}, the current working directory is chosen.}
 \item{digits}{Number of significant digits used for OpenBUGS input, see \code{\link{formatC}}.}
+\item{BRugsVerbose}{Logical, whether BRugs is supposed to be verbose. 
+    This can be controlled for the whole BRugs package by by the option \sQuote{BRugsVerbose} (see \code{\link{options}})
+    which is set to \code{TRUE} by default.}
 }
 \value{A list containg components
 \item{Stats}{A data frame containing sample statistics. See \code{\link{samplesStats}}.}
 \item{DIC}{The DIC statistics, if \code{DIC=TRUE}, else \code{NULL}. See \code{\link{dicStats}}.}
 }
-\seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}} 
+\seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}. 
+    Andrew Gelman proposes some \code{print} and \code{plot} methods that can be accessed by the 
+    \code{openbugs} (and \code{bugs}) and \code{as.bugs.array} functions in the CRAN package \pkg{R2WinBUGS}.}
 \examples{
 BRugsFit(data = "ratsdata.txt", inits = "ratsinits.txt", 
     para = c("alpha", "beta"), modelFile = "ratsmodel.txt", 
