@@ -12,7 +12,7 @@ help.BRugs(browser = getOption("browser"))
 }
 \details{
     BRugs is a collection of R functions that 
-    allow users to analys graphical models using MCMC techniques. Most of the R functions in BRugs provide a 
+    allow users to analyze graphical models using MCMC techniques. Most of the R functions in BRugs provide a 
     interface to the BRugs dynamic link library (shared object file). The BRugs dynamic link library is able to make 
     use of many of the WinBUGS components, in particular those components concerned with graphical models and MCMC 
     simulation. BRugs lacks the GUI interface of WinBUGS but is able to use R to create graphical displays of the 

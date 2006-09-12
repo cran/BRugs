@@ -1,19 +1,19 @@
 citHeader("To cite the R package BRugs in publications use:")
 
 citEntry(entry = "article",
-	title        = "Making BUGS Open",
-	author       = personList(
-			person(first="Andrew", last="Thomas", email="")
-			person(first="Bob", last="O'Hara", email="")
-			person(first="Uwe", last="Ligges", email="Uwe.Ligges@R-project.org"),
-			person(first="Sibylle", last="Sturtz", email="sturtz@statistik.uni-dortmund.de")),
-	journal      = "R News",
-	year         = 2006,
-	pages        = "12--17",
-	number       = 1,
-	volume       = 6,
-	url          = "http://cran.r-project.org/doc/Rnews/",
-	textVersion  = paste("Thomas, A., O'Hara, B., Ligges, U., and Sturtz, S. (2006).",
-		"Making BUGS Open.",
-		"R News 6 (1), 12-17.")
-	)
+    title        = "Making BUGS Open",
+    author       = personList(
+            person(first="Andrew", last="Thomas", email=""),
+            person(first="Bob", last="O'Hara", email=""),
+            person(first="Uwe", last="Ligges", email="Uwe.Ligges@R-project.org"),
+            person(first="Sibylle", last="Sturtz", email="sturtz@statistik.uni-dortmund.de")),
+    journal      = "R News",
+    year         = 2006,
+    pages        = "12--17",
+    number       = 1,
+    volume       = 6,
+    url          = "http://cran.r-project.org/doc/Rnews/",
+    textVersion  = paste("Thomas, A., O'Hara, B., Ligges, U., and Sturtz, S. (2006).",
+        "Making BUGS Open.",
+        "R News 6 (1), 12-17.")
+    )
