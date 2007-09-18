@@ -2,7 +2,7 @@
 \alias{plotBgr}
 \title{Plot the Gelman-Rubin convergence statistic for a scalar variable}
 \description{This function calculates and plots the Gelman-Rubin convergence statistic for a scalar variable, 
-    as modified by Brooks and Gelman (1998).}
+    as modified by Brooks and Gelman (1998).
 }
 \usage{
 plotBgr(node, plot = TRUE, main = NULL, xlab = "iteration", 

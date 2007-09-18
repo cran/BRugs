@@ -8,9 +8,9 @@
 #    if(any(DoNotSetNA))
 #        warning("Some NA values formerly had a non-NA value -- left unchanged")
 #    values[DoNotSetNA] <- cv[DoNotSetNA]
-    command <- "BugsRobjects.Set"
+    command <- "BugsRobjects.SetVariable"
     .C("CharArray", command, nchar(command), nodeLabel, nchar(nodeLabel), integer(1), PACKAGE="BRugs")
-    command <- "BugsRobjects.Size"
+    command <- "BugsRobjects.GetSize"
     nodeSize <- .C("Integer", command, nchar(command), integer(1), integer(1), PACKAGE="BRugs")[3]
     if(nodeSize == -1)
         stop(nodeLabel, " is not a node in BUGS model")

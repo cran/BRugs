@@ -5,8 +5,12 @@ function(node, beg = samplesGetBeg(), end = samplesGetEnd(),
     ask = NULL, ann = TRUE, ...)
 #   Plot bgr statistic                  
 {
-    if(is.null(ask))
+    if(is.null(ask)) {
+      if (is.R())
         ask <- !((dev.cur() > 1) && !dev.interactive())
+      else
+        ask <- !((dev.cur() > 1) && !interactive())
+    }
     oldBeg <- samplesGetBeg()
     oldEnd <- samplesGetEnd()
     oldFirstChain <- samplesGetFirstChain()
@@ -27,7 +31,10 @@ function(node, beg = samplesGetBeg(), end = samplesGetEnd(),
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
     mons <- samplesMonitors(node)
-    par(mfrow = mfrow, ask = ask, ann = ann)
+    if (is.R())
+      par(mfrow = mfrow, ask = ask, ann = ann)
+    else
+      par(mfrow = mfrow, ask = ask)
     result <- lapply(mons, plotBgr, bins = bins, plot = plot, ...)
     names(result) <- mons
     if(plot) invisible(result)

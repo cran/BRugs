@@ -15,6 +15,8 @@ bugsData(data, fileName = file.path(getwd(), "data.txt"), digits = 5)
 \value{
     Invisibly returns the \code{fileName}.
 }
+\note{\code{bugsData} uses \code{format="E"} internally, i.e. you need to 
+    pay attention when writing integers containg many significant digits to the data file.}
 \seealso{\code{\link{BRugs}}}
 \keyword{file}
 \concept{data}

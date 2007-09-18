@@ -12,6 +12,10 @@ function(fileName = "data.txt")
             stop(fileNm, " is a directory, but a file is required")
         command <- paste("BugsEmbed.SetFilePath(", sQuote(fileNm), 
             ");BugsEmbed.LoadDataGuard;BugsEmbed.LoadData", sep = "")
+        if (!is.R()){
+          command <- gsub ("\\\\", "/", command)
+    	    command <- gsub ("//", "/", command)
+        }
         .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
         if(getOption("BRugsVerbose"))     
             buffer()

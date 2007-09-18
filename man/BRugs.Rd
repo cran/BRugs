@@ -37,7 +37,7 @@ help.BRugs(browser = getOption("browser"))
     of any successes or failures.
 } 
 %\references{}
-\seealso{\code{\link{help.WinBUGS}} and the meta function \code{\link{BRugsFit}}} 
+\seealso{\code{\link{help.WinBUGS}} (which currently is called from \code{help.BRugs}) and the meta function \code{\link{BRugsFit}}} 
 \examples{
 ###    Step by step example:    ###
 library(BRugs) # loading BRugs
@@ -67,7 +67,8 @@ samplesAutoC("alpha[1:6]", 1)        # plot autocorrelations of 1st chain
 setwd(oldwd) 
 \dontrun{
 # Getting more (online-)help:
-help.BRugs() 
+if (is.R())
+  help.BRugs() 
 }
 }
 \keyword{interface}

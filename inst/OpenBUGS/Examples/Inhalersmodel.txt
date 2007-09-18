@@ -59,9 +59,9 @@
 		kappa ~ dnorm(0, 1.0E-06)
 
 	# ordered cut points for underlying continuous latent variable  
-		a[1] ~ dunif(-1000, a[2])
-		a[2] ~ dunif(a[1], a[3])
-		a[3] ~ dunif(a[2],  1000) 
+		a[1] ~ dflat()T(-1000, a[2])
+		a[2] ~ dflat()T(a[1], a[3])
+		a[3] ~ dflat()T(a[2],  1000) 
 
 		tau ~ dgamma(0.001, 0.001)
 		sigma <- sqrt(1 / tau)

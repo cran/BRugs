@@ -7,9 +7,15 @@ function (inits, numChains = 1, fileName, digits = 5){
     if(!is.null(inits)){
       for (i in 1:numChains){
         if (is.function(inits))
-          write.datafile(lapply(inits(), formatC, digits = digits, format = "E"), fileName[i])
+          if (is.R())
+            write.datafile(lapply(inits(), formatC, digits = digits, format = "E"), fileName[i])
+          else
+            writeDatafileS4(inits(), towhere = fileName[i])
         else
-          write.datafile(lapply(inits[[i]], formatC, digits = digits, format = "E"), fileName[i])
+          if (is.R())
+            write.datafile(lapply(inits[[i]], formatC, digits = digits, format = "E"), fileName[i])
+          else
+            writeDatafileS4(inits[[i]], towhere = fileName[i])
       }
   }
   invisible(fileName)

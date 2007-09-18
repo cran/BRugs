@@ -4,8 +4,12 @@ firstChain = samplesGetFirstChain(), lastChain = samplesGetLastChain(),
 thin = samplesGetThin(), mfrow = c(3, 2), ask = NULL, ann = TRUE, ...)
 # Plot posterior density                            
 {
-    if(is.null(ask))
+    if(is.null(ask)) {
+      if (is.R())
         ask <- !((dev.cur() > 1) && !dev.interactive())
+      else
+        ask <- !((dev.cur() > 1) && !interactive())
+    }
     oldBeg <- samplesGetBeg()
     oldEnd <- samplesGetEnd()
     oldFirstChain <- samplesGetFirstChain()
@@ -26,6 +30,11 @@ thin = samplesGetThin(), mfrow = c(3, 2), ask = NULL, ann = TRUE, ...)
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
     mons <- samplesMonitors(node)
-    par(mfrow = mfrow, ask = ask, ann = ann)
+		if (is.R())
+      par(mfrow = mfrow, ask = ask, ann = ann)
+    else
+      par(mfrow = mfrow, ask = ask)
     junk <- sapply(mons, plotDensity, ...)
+    if (!is.R())
+    	invisible()
 }

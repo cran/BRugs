@@ -3,8 +3,12 @@ function(node)
 #   Calculates statistics for summary monitor associated with node in OpenBUGS model
 {
     nodeName <- sQuote(node)
-    result <- data.frame(mean=NULL, sd=NULL, val2.5pc=NULL, 
-                         median=NULL, val97.5pc=NULL, sample=NULL)
+    if (is.R())
+      result <- data.frame(mean=NULL, sd=NULL, val2.5pc=NULL, 
+                           median=NULL, val97.5pc=NULL, sample=NULL)
+    else
+      result <- data.frame(mean=numeric(), sd=numeric(), val2.5pc=numeric(), 
+                           median=numeric(), val97.5pc=numeric(), sample=numeric())
     for(i in seq(along=nodeName)){
         command <- paste("SummaryEmbed.SetVariable(", nodeName[i], "); SummaryEmbed.StatsGuard;",
                          "SummaryEmbed.Stats")

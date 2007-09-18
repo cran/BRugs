@@ -23,10 +23,16 @@ thin = samplesGetThin())
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
     nodeName <- sQuote(node)
+
+    if (is.R()){
+      result <- data.frame(mean=NULL, sd=NULL, MC_error = NULL, val2.5pc=NULL, 
+                           median=NULL, val97.5pc=NULL, start = NULL, sample=NULL)
+    } else {
+      result <- data.frame(mean=numeric(), sd=numeric(), MC.error = numeric(), 
+                           val2.5pc=numeric(), median=numeric(), val97.5pc=numeric(), 
+                           start = numeric(), sample=numeric())
+    }
     
-    
-    result <- data.frame(mean=NULL, sd=NULL, MC_error = NULL, val2.5pc=NULL, 
-                         median=NULL, val97.5pc=NULL, start = NULL, sample=NULL)
     for(i in seq(along=nodeName)){
         command <- paste("SamplesEmbed.SetVariable(", nodeName[i], 
         ");SamplesEmbed.StatsGuard;SamplesEmbed.Stats")

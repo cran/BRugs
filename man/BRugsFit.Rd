@@ -9,7 +9,8 @@ BRugsFit(modelFile, data, inits, numChains = 3, parametersToSave,
     BRugsVerbose = getOption("BRugsVerbose"))
 }
 \arguments{
-\item{modelFile}{File containing the model written in OpenBUGS code.}
+\item{modelFile}{File containing the model written in OpenBUGS code, 
+    an R function that contains a BUGS model that is written to a temporary model file (see \code{\link{tempfile}}) using \code{\link{writeModel}}.}
 \item{data}{Either a named list (names corresponding to variable names in the \code{modelFile}) 
     of the data for the OpenBUGS model, \emph{or}
     a vector or list of the names of the data objects used by the model.

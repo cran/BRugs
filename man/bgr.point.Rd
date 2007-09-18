@@ -3,7 +3,7 @@
 \alias{bgrPoint}
 \title{Internal functions (to support plotting the Gelman-Rubin convergence statistic)}
 \description{These functions are for internal use only. 
-    They support \code{\link{samplesBgr}} and \code{\link{plotBgr}}.}
+    They support \code{\link{samplesBgr}} and \code{\link{plotBgr}}.
 }
 \usage{
 bgrGrid(node, bins = 50)

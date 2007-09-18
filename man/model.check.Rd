@@ -10,7 +10,7 @@ modelCheck(fileName)
 }
 \value{
 If a syntax error is detected the position of the error and a description of the error is printed, 
-otherwise the \sQuote{model is syntaxicaly correct} message is displayed.}
+otherwise the \sQuote{model is syntaxicaly correct} message is displayed.
 }
 \note{
 If an attempt is made to execute this function in an inappropriate context the generic error message 
