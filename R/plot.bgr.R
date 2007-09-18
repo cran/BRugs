@@ -5,7 +5,7 @@ function(node, plot = TRUE, main = NULL, xlab = "iteration", ylab = "bgr",
 {
     sM <- samplesMonitors(node)
     if(length(sM) > 1 || sM != node)
-        stop("node must be a scalar variable from the model, for arrays use samplesAutoC")
+        stop("node must be a scalar variable from the model, for arrays use samplesBgr")
     grid <- bgrGrid(node, bins = bins)
     bgr <- sapply(grid, bgrPoint, node = node)
     yRange <- range(bgr[4,])

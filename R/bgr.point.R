@@ -11,15 +11,25 @@ function(node, iteration)
     command <- "SamplesEmbed.SampleSize"
     sampleSize <- as.integer(.C("Integer", command, nchar(command), 
         integer(1), integer(1), PACKAGE="BRugs")[[3]])
-    command <- "SamplesEmbed.Sample"
-    sample <- .C("RealArray", command, nchar(command), real(sampleSize),
-                 as.integer(sampleSize), integer(1), PACKAGE="BRugs")[[3]]
+    command <- "SamplesEmbed.SampleValues"
+    if (is.R())
+      sample <- .C("RealArray", command, nchar(command), real(sampleSize),
+                   as.integer(sampleSize), integer(1), PACKAGE="BRugs")[[3]]
+    else
+      sample <- .C("RealArray", command, nchar(command), double(sampleSize),
+                   as.integer(sampleSize), integer(1), PACKAGE="BRugs")[[3]]
     lenChain <- sampleSize %/% numChains
-    dq <- quantile(sample, c(0.1, 0.9), names = FALSE)
+    if (is.R())
+      dq <- quantile(sample, c(0.1, 0.9), names = FALSE)
+    else
+      dq <- quantile(sample, c(0.1, 0.9))
     d.delta <- dq[2] - dq[1]
     n.delta <- 0
     for (i in 1:numChains) {
-        nq <- quantile(sample[((i - 1) * lenChain + 1) : (i * lenChain)], c(0.1, 0.9), names = FALSE)
+        if (is.R())
+          nq <- quantile(sample[((i - 1) * lenChain + 1) : (i * lenChain)], c(0.1, 0.9), names = FALSE)
+        else
+          nq <- quantile(sample[((i - 1) * lenChain + 1) : (i * lenChain)], c(0.1, 0.9))
         n.delta <- n.delta + nq[2] - nq[1]
     }
     n.delta <- n.delta / numChains

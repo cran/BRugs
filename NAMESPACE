@@ -1,8 +1,8 @@
 useDynLib(BRugs)
+importFrom(coda, mcmc)
 export(BRugsFit, bugsData, bugsInits, buildMCMC, currentValues,
 dicClear, dicSet, dicStats,
-getGraphObj, getNumChains,
-getUpdaterObj, help.BRugs, help.WinBUGS, loadModule,
+getNumChains, help.BRugs, help.WinBUGS,
 modelAdaptivePhase, modelCheck, modelCompile, modelData,
 modelGenInits, modelGetSeed, modelInits, modelIteration,
 modelModules, modelNames, modelPrecision, modelSaveState,

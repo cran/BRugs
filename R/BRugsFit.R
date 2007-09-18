@@ -13,6 +13,10 @@ function(modelFile, data, inits, numChains = 3, parametersToSave,
       setwd(working.directory)
       on.exit(setwd(savedWD), add = TRUE)
   }
+  if(is.function(modelFile)){
+      writeModel(modelFile, con = (modelFile <- tempfile("model")))
+      if(!is.R()) on.exit(file.remove(modelFile), add = TRUE)
+  }
   if(!file.exists(modelFile)) stop(modelFile, " does not exist")
   if(file.info(modelFile)$isdir) stop(modelFile, " is a directory, but a file is required")  
   modelCheck(modelFile)

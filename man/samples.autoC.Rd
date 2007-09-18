@@ -14,7 +14,8 @@ samplesAutoC(node, chain, beg = samplesGetBeg(),
   \item{thin}{To only use every \code{thin}-th value of the stored sample for statistics.}
   \item{plot}{Logical, whether to plot the ACF or only return the values. If \code{TRUE}, values are returned invisibly.}
   \item{mfrow, ask, ann}{Graphical parameters, see \code{\link{par}} for details.
-    \code{ask} defaults to \code{TRUE} unless it is plotting into an already opened non-interactive device.}  
+    \code{ask} defaults to \code{TRUE} unless it is plotting into an already opened non-interactive device.  
+    The \code{ann} parameter is not available in S-PLUS, and will be ignored if it is set.}
   \item{...}{Further graphical parameters as in \code{\link{par}} may also be passed as arguments
      to \code{\link{plotAutoC}}.}
 }

@@ -22,6 +22,10 @@ function(fileName, chainNum = NULL)
         command <- paste("BugsEmbed.SetFilePath(", filename, 
         "); BugsEmbed.LoadInitsGuard; BugsEmbed.chain := ",
         as.character(chainNum[i]), "; BugsEmbed.LoadInits")
+        if (!is.R()){
+          command <- gsub ("\\\\", "/", command)
+    	    command <- gsub ("//", "/", command)
+        }
         .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
         if(getOption("BRugsVerbose")){
             cat("Initializing chain ", chainNum[i], ": ", sep="")

@@ -15,7 +15,8 @@ samplesDensity(node, beg = samplesGetBeg(), end = samplesGetEnd(),
   \item{firstChain, lastChain}{Arguments to select a sub group of chains to plot density estimate or histogram for.}
   \item{thin}{to only use every \code{thin}-th value of the stored sample for statistics.}
   \item{mfrow, ask, ann}{Graphical parameters, see \code{\link{par}} for details.
-    \code{ask} defaults to \code{TRUE} unless it is plotting into an already opened non-interactive device.}
+    \code{ask} defaults to \code{TRUE} unless it is plotting into an already opened non-interactive device.
+    The \code{ann} parameter is not available in S-PLUS, and will be ignored if it is set.}
   \item{...}{Further graphical parameters as in \code{\link{par}} may also be passed as arguments
      to \code{\link{plotDensity}}.}
 }
