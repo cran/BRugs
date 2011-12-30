@@ -24,13 +24,14 @@ function(fileName, chainNum = NULL)
         as.character(chainNum[i]), "; BugsEmbed.LoadInits")
         if (!is.R()){
           command <- gsub ("\\\\", "/", command)
-    	    command <- gsub ("//", "/", command)
+            command <- gsub ("//", "/", command)
         }
-        .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+        .CmdInterpreter(command)
         if(getOption("BRugsVerbose")){
-            cat("Initializing chain ", chainNum[i], ": ", sep="")
+            message("Initializing chain ", chainNum[i], ": ", sep="")
             buffer()
         }
+        options("BRugsNextChain" = chainNum[i] + 1)        
     }
     invisible()
 }

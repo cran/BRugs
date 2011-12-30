@@ -3,11 +3,13 @@
 \title{Creating an OpenBUGS model file}
 \description{Convert R function to an OpenBUGS model file}
 \usage{
-writeModel(model, con = "model.txt")
+writeModel(model, con = "model.txt", digits = 5)
 }
 \arguments{
-  \item{model}{R function containg the BUGS model in the BUGS model language, for minor differences see Section Details.}
+  \item{model}{R function containing the BUGS model in the BUGS model language, for minor differences see Section Details.}
   \item{con}{passed to \code{link{writeLines}} which actually writes the model file}
+  \item{digits}{number of significant digits used for \pkg{BUGS}
+    input, see \code{\link{formatC}}}
 }
 \value{
  Nothing, but as a side effect, the model file is written.

@@ -1,6 +1,6 @@
 "modelSetOR" <-
 function(factoryName, overRelaxation)
-#   Set the length of adaptive phase
+#   Set over-relaxed updating
 {
     name <- sQuote(factoryName)
     command <- paste("UpdaterMethods.SetFactory(", name, 
@@ -8,5 +8,5 @@ function(factoryName, overRelaxation)
                      "UpdaterMethods.SetOverRelaxation(", 
                      overRelaxation,
                      ")", sep = "")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+    .CmdInterpreter(command)
 }

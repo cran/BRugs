@@ -24,6 +24,6 @@ help.WinBUGS <- function(browser = getOption("browser"))
                              "switch to its window."),
                        exdent = 4))
     writeLines("Otherwise, be patient ...")
-    browseURL(system.file("OpenBUGS", "Manuals", "Contents.html", package="BRugs"))
+    browseURL(file.path(options()$OpenBUGSdoc, "Manuals", "Contents.html"))
     invisible("")
 }

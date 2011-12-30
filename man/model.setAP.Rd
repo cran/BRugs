@@ -3,7 +3,8 @@
 \alias{modelSetIts}
 \alias{modelSetOR}
 \title{Changing settings of updating algorithms}
-\description{These functions change adaptivePhase, iterations, and overRelaxation settings.}
+\description{These functions change adaptive phase, iterations, and
+  overRelaxation settings. Currently only supported on Windows, not Linux.}
 \usage{
 modelSetAP(factoryName, adaptivePhase)
 modelSetIts(factoryName, iterations)
@@ -12,7 +13,7 @@ modelSetOR(factoryName, overRelaxation)
 \arguments{
   \item{factoryName}{String defining which particular MCMC updating algorithm is to be tuned.
 Technically this string is the type name of the factory object used to create the updater,
-for example \sQuote{UpdaterMetnormal.Factory} for the random walk metropolis sampler.}
+for example \sQuote{UpdaterMetnormal.Factory} for the random walk Metropolis sampler.}
   \item{adaptivePhase}{length of the updater's adaptive phase}
   \item{iterations}{number of times an iterative algorithm is run before a failure is reported}
   \item{overRelaxation}{amount of over relaxation the updater uses}

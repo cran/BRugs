@@ -7,12 +7,13 @@
 }
 \usage{
 bgrGrid(node, bins = 50)
-bgrPoint(node, iteration)
+bgrPoint(sample)
 }
 \arguments{
   \item{node}{Character vector of length 1, name of a variable in the model.}
   \item{bins}{Blocksize}
-  \item{iteration}{Calculated by \code{bgrGrid}}
+  \item{sample}{Monitored sample from multiple chains to calculate the
+    convergence statistic for.}
 }
 \note{Intended for internal use only.}
 \seealso{\code{\link{samplesBgr}}, \code{\link{BRugs}}, \code{\link{help.WinBUGS}}}

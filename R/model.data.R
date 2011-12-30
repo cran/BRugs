@@ -14,9 +14,9 @@ function(fileName = "data.txt")
             ");BugsEmbed.LoadDataGuard;BugsEmbed.LoadData", sep = "")
         if (!is.R()){
           command <- gsub ("\\\\", "/", command)
-    	    command <- gsub ("//", "/", command)
+            command <- gsub ("//", "/", command)
         }
-        .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+        .CmdInterpreter(command)
         if(getOption("BRugsVerbose"))     
             buffer()
     }

@@ -1,23 +1,9 @@
 "bgrPoint" <-
-function(node, iteration)
-# Calculate the bgr statistic at iteration
+function(sample)
+# Calculate the bgr statistic given a sample concatenated over chains 
 {
-    oldEnd <- samplesGetEnd()
-    on.exit(samplesSetEnd(oldEnd))
-    samplesSetEnd(as.integer(iteration))
     numChains <- getNumChains()
-    command <- paste("SamplesEmbed.SetVariable(", sQuote(node), ")")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    command <- "SamplesEmbed.SampleSize"
-    sampleSize <- as.integer(.C("Integer", command, nchar(command), 
-        integer(1), integer(1), PACKAGE="BRugs")[[3]])
-    command <- "SamplesEmbed.SampleValues"
-    if (is.R())
-      sample <- .C("RealArray", command, nchar(command), real(sampleSize),
-                   as.integer(sampleSize), integer(1), PACKAGE="BRugs")[[3]]
-    else
-      sample <- .C("RealArray", command, nchar(command), double(sampleSize),
-                   as.integer(sampleSize), integer(1), PACKAGE="BRugs")[[3]]
+    sampleSize <- length(sample)
     lenChain <- sampleSize %/% numChains
     if (is.R())
       dq <- quantile(sample, c(0.1, 0.9), names = FALSE)
@@ -34,5 +20,5 @@ function(node, iteration)
     }
     n.delta <- n.delta / numChains
     bgr.stat <- d.delta / n.delta
-    return(c(iteration, n.delta, d.delta, bgr.stat))
+    return(c(n.delta, d.delta, bgr.stat))
 }

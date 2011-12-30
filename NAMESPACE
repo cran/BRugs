@@ -1,14 +1,16 @@
-useDynLib(BRugs)
-importFrom(coda, mcmc)
-export(BRugsFit, bugsData, bugsInits, buildMCMC, currentValues,
+importFrom(coda, mcmc, mcmc.list)
+importFrom(utils, compareVersion, maintainer)
+export(BRugsFit, bugsData, bugsInits, buildMCMC,
 dicClear, dicSet, dicStats,
 getNumChains, help.BRugs, help.WinBUGS,
+infoMemory,infoModules,infoNodeValues,infoNodeMethods,infoNodeTypes,
+infoUpdatersbyName,infoUpdatersbyDepth,
+loadOpenBUGS,
 modelAdaptivePhase, modelCheck, modelCompile, modelData,
-modelGenInits, modelGetSeed, modelInits, modelIteration,
-modelModules, modelNames, modelPrecision, modelSaveState,
-modelSetAP, modelSetIts, modelSetOR, modelSetSeed,
+modelGenInits, modelInits, modelIteration,
+modelNames, modelPrecision, modelSaveState,
+modelSetAP, modelSetIts, modelSetOR, modelSetRN,
 modelUpdate, modelEnable, modelDisable,
-modelEnableDynamic, modelDisableDynamic,
 plotAutoC, plotBgr, plotDensity,
 plotHistory, ranksClear, ranksSet, ranksStats,
 samplesAutoC, samplesBgr, samplesClear, samplesCoda,

@@ -1,31 +1,22 @@
+## See unix/zzz.R, windows/zzz.R for platform specific .onLoad functions
+
 if (is.R()){
 
-    ".onLoad" <- function(lib, pkg){
-        ## sets path / file variables and initializes subsystems
-        root <- file.path(system.file("OpenBUGS", package=pkg))
-        ## we do have a NAMESPACE now: library.dynam("BRugs", pkg, lib)
-        len <- nchar(root)
-        tempDir <- gsub("\\\\", "/", tempdir())
-        .C("SetRoot", as.character(root), len, PACKAGE="BRugs")
-        .C("SetTempDir", as.character(tempDir), nchar(tempDir), PACKAGE="BRugs")
-        command <- "BugsMappers.SetDest(2)"
-        .C("CmdInterpreter", as.character(command), nchar(command), integer(1), PACKAGE="BRugs")
-        if(is.null(getOption("BRugsVerbose")))
-            options("BRugsVerbose" = TRUE)
-    }
-    
-    ".onAttach" <- function(lib, pkg){
-        message("Welcome to BRugs running on OpenBUGS version 3.0.2")
-    }
-    
-    ".onUnload" <- function(libpath){
-        library.dynam.unload("BRugs", libpath)
+    .initGlobals <- function(){
+        options("BRugsSamplesBeg" = 1)
+        options("BRugsSamplesEnd" = 10000000)
+        options("BRugsSamplesFirstChain" = 1)
+        options("BRugsSamplesLastChain" = 1)
+        options("BRugsSamplesThin" = 1)
+        options("BRugsSamplesVariable" = "*")
+        options("BRugsNextChain" = 1) # index of chain which needs to be initialized next
+        options("BRugsPrec" = 4)
     }
 
     ## Overwriting new (from R-2.6.0) sQuote (for typing human readable text) in R within the BRugs Namespace!
     ## we cannot use sQuote that uses fancy quotes!
     sQuote <- function(x) paste("'", x, "'", sep="")
-        
+
 
 } else {  # ends if (is.R())
 
@@ -41,12 +32,12 @@ if (is.R()){
         command <- "BugsMappers.SetDest(2)"
         .C("CmdInterpreter", as.character(command), nchar(command), integer(1))
         if(is.null(getOption("BRugsVerbose")))
-        options("BRugsVerbose" = TRUE)
+            options("BRugsVerbose" = TRUE)
         invisible()
     }
-    
+
     .tempDir <- getwd()
-    
+
     tempdir <- function(){ .tempDir }
 
 }  # ends else

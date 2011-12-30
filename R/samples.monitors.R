@@ -4,8 +4,8 @@ function(node)
 {
   if (is.R()){
     command <- paste("SamplesEmbed.SetVariable(", sQuote(node), 
-        ");SamplesEmbed.StatsGuard;SamplesEmbed.Labels")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+        ");SamplesEmbed.StatsGuard;SamplesEmbed.Labels",sep="")
+    .CmdInterpreter(command)
     buffer <- file.path(tempdir(), "buffer.txt")
     rlb <- readLines(buffer)
     len <- length(rlb)
@@ -23,8 +23,8 @@ function(node)
   } else {
     sampsMonsSingle <- function(node){
       command <- paste("SamplesEmbed.SetVariable(", sQuote(node), 
-          ");SamplesEmbed.StatsGuard;SamplesEmbed.Labels")
-      .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+          ");SamplesEmbed.StatsGuard;SamplesEmbed.Labels",sep="")
+    .CmdInterpreter(command)
       buffer <- file.path(tempdir(), "buffer.txt")
       rlb <- readLines(buffer)
       len <- length(rlb)
@@ -44,7 +44,7 @@ function(node)
       mons <- lapply(node, sampsMonsSingle)
     }
     mons <- unlist(mons)
-	  return(mons)
+      return(mons)
 
   }
 }

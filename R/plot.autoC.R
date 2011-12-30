@@ -7,22 +7,7 @@ function(node, plot = TRUE, colour = c("red", "blue", "green", "yellow", "black"
     if(length(sM) > 1 || sM != node)
         stop("node must be a scalar variable from the model, for arrays use samplesAutoC")
     nodeName <- sQuote(node)
-    command <- paste("SamplesEmbed.SetVariable(", nodeName, ")")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    command <- "SamplesEmbed.SampleSize"
-    if (is.R())
-      sampleSize <- as.integer(.C("Integer", command, nchar(command), 
-                                  integer(1), integer(1), PACKAGE="BRugs")[3])
-    else 
-      sampleSize <- as.integer(.C("Integer", command, nchar(command), 
-                                  integer(1), integer(1), PACKAGE="BRugs")[[3]])
-    command <- "SamplesEmbed.SampleValues"
-    if (is.R())
-      sample <- .C("RealArray", command, nchar(command), real(sampleSize),
-                   as.integer(sampleSize), integer(1), PACKAGE="BRugs")[[3]]
-    else
-      sample <- .C("RealArray", command, nchar(command), double(sampleSize),
-                   as.integer(sampleSize), integer(1), PACKAGE="BRugs")[[3]]
+    sample <- samplesSample(node)
     chain <- samplesGetFirstChain()
     if (sd(sample) > 1.0E-10)
         acfresult <- acf(sample, col = colour[chain], main = if(is.null(main)) nodeName else main, 

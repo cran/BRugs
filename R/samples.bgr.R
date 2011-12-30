@@ -5,7 +5,9 @@ function(node, beg = samplesGetBeg(), end = samplesGetEnd(),
     ask = NULL, ann = TRUE, ...)
 #   Plot bgr statistic                  
 {
-    if(is.null(ask)) {
+    mons <- samplesMonitors(node)
+    if (any(grep("^inference can not be made", mons))) { stop(mons) }    
+    if(plot && is.null(ask)) {
       if (is.R())
         ask <- !((dev.cur() > 1) && !dev.interactive())
       else
@@ -31,10 +33,12 @@ function(node, beg = samplesGetBeg(), end = samplesGetEnd(),
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
     mons <- samplesMonitors(node)
-    if (is.R())
-      par(mfrow = mfrow, ask = ask, ann = ann)
-    else
-      par(mfrow = mfrow, ask = ask)
+    if(plot){
+        if (is.R())
+        par(mfrow = mfrow, ask = ask, ann = ann)
+        else
+        par(mfrow = mfrow, ask = ask)
+    }
     result <- lapply(mons, plotBgr, bins = bins, plot = plot, ...)
     names(result) <- mons
     if(plot) invisible(result)

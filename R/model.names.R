@@ -3,18 +3,32 @@ function()
 {
 #   gets names in OpenBUGS model
     command <- "BugsRobjects.GetNumberNames"
-    number <- .C("Integer", command, nchar(command), integer(1), integer(1), PACKAGE="BRugs")[[3]]
+    number <- .Integer(command)
     name <- character(number)
     if(length(number)){
-        for(i in 1:number){
-            command <- paste("BugsRobjects.SetIndex(", i-1, ")", sep="")
-            .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-            command <- "BugsRobjects.GetStringLength"
-            numchar <- .C("Integer", command, nchar(command), integer(1), integer(1), PACKAGE="BRugs")[[3]]
-            command <- "BugsRobjects.GetVariable"
-            char <- paste(rep(" ", numchar), collapse="")
-            name[i] <- .C("CharArray", command, nchar(command), char, numchar, integer(1), PACKAGE="BRugs")[[3]]
-        }
+      cmds <- character(0)
+      cmdtype <- character()
+      for(i in 1:number){
+        cmds <- c(cmds, paste("BugsRobjects.SetIndex(", i-1, ")", sep=""),
+                  "BugsRobjects.GetStringLength")
+        cmdtype <- c(cmdtype, c("CmdInterpreter","Integer"))
+      }    
+      res <- .OpenBUGS(cmds, cmdtype)
+      numchar <- unlist(res[seq(2, 2*number, by=2)])
+        
+      cmds <- character(0)
+      cmdtype <- character()
+      args <- list()
+      for(i in 1:number){
+        char <- paste(rep(" ", numchar[i]), collapse="")
+        cmds <- c(cmds,
+                  paste("BugsRobjects.SetIndex(", i-1, ")", sep=""),
+                  "BugsRobjects.GetVariable")
+        cmdtype <- c(cmdtype, c("CmdInterpreter","CharArray"))
+        args <- c(args, list(NA, char))
+      }       
+      res <- .OpenBUGS(cmds, cmdtype, args)
+      name <- unlist(res[seq(2, 2*number, by=2)])      
     }
     return(name)
-}
+  }

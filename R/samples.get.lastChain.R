@@ -1,8 +1,6 @@
 "samplesGetLastChain" <-
 function()
-#   Get the lastChain field
+#   Last chain from which to compute sample statistics 
 {
-    command <- "SamplesEmbed.lastChain"
-    as.integer(.C("Integer", command, nchar(command), 
-        integer(1), integer(1), PACKAGE="BRugs")[[3]])
+    getOption("BRugsSamplesLastChain")
 }
