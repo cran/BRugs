@@ -22,12 +22,17 @@ thin = samplesGetThin())
     samplesSetLastChain(lastChain)
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
-
-    command <- paste("CorrelEmbed.SetVariable0(", sQuote(node0),
-                            ");CorrelEmbed.SetVariable1(", sQuote(node1), 
-                            ");CorrelEmbed.Guard", ";CorrelEmbed.PrintMatrix")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-
+    
+    command <- paste("CorrelEmbed.beg :=", getOption("BRugsSamplesBeg"),
+                     "; CorrelEmbed.end :=", getOption("BRugsSamplesEnd"),
+                     "; CorrelEmbed.firstChain :=", getOption("BRugsSamplesFirstChain"),
+                     "; CorrelEmbed.lastChain :=", getOption("BRugsSamplesLastChain"),
+                     "; CorrelEmbed.thin :=", getOption("BRugsSamplesThin"),                     
+                     "; CorrelEmbed.SetVariable0(", sQuote(node0),
+                     ");CorrelEmbed.SetVariable1(", sQuote(node1), 
+                     ");CorrelEmbed.Guard", ";CorrelEmbed.PrintMatrix"
+                     )
+    .CmdInterpreter(command)
     buffer <- file.path(tempdir(), "buffer.txt")
     rlb <- readLines(buffer)
     len <- length(rlb)

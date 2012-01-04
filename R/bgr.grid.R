@@ -2,11 +2,7 @@
 function(node, bins = 50)
 # Calculate grid of points at which to evaluate bgr statistic
 {
-    command <- paste("SamplesEmbed.SetVariable(", sQuote(node), ") END")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    command <- paste("SamplesEmbed.SampleSize")
-    sampleSize <- as.integer(.C("Integer", command, nchar(command), 
-        integer(1), integer(1), PACKAGE="BRugs")[[3]])
+    sampleSize <- samplesSize(node)
     beg <- samplesGetBeg()
     end <- min(c(samplesGetEnd(), modelIteration()))
     numChains <- samplesGetLastChain() - samplesGetFirstChain() + 1

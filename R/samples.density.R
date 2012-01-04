@@ -1,8 +1,9 @@
 "samplesDensity" <-
-function(node, beg = samplesGetBeg(), end = samplesGetEnd(), 
-firstChain = samplesGetFirstChain(), lastChain = samplesGetLastChain(), 
-thin = samplesGetThin(), mfrow = c(3, 2), ask = NULL, ann = TRUE, ...)
-# Plot posterior density                            
+function(node, beg = samplesGetBeg(), end = samplesGetEnd(),
+firstChain = samplesGetFirstChain(), lastChain = samplesGetLastChain(),
+thin = samplesGetThin(), plot = TRUE, mfrow = c(3, 2), ask = NULL,
+ann = TRUE, ...)
+# Plot posterior density
 {
     if(is.null(ask)) {
       if (is.R())
@@ -15,7 +16,7 @@ thin = samplesGetThin(), mfrow = c(3, 2), ask = NULL, ann = TRUE, ...)
     oldFirstChain <- samplesGetFirstChain()
     oldLastChain <- samplesGetLastChain()
     oldThin <- samplesGetThin()
-    on.exit({    
+    on.exit({
         samplesSetBeg(oldBeg)
         samplesSetEnd(oldEnd)
         samplesSetFirstChain(oldFirstChain)
@@ -30,11 +31,17 @@ thin = samplesGetThin(), mfrow = c(3, 2), ask = NULL, ann = TRUE, ...)
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
     mons <- samplesMonitors(node)
-		if (is.R())
-      par(mfrow = mfrow, ask = ask, ann = ann)
-    else
-      par(mfrow = mfrow, ask = ask)
-    junk <- sapply(mons, plotDensity, ...)
+    if (plot) {
+        if (is.R())
+            par(mfrow = mfrow, ask = ask, ann = ann)
+        else
+            par(mfrow = mfrow, ask = ask)
+    }
+    result <- sapply(mons, plotDensity, plot=plot, ...)
     if (!is.R())
-    	invisible()
+        invisible()
+    else {
+        if(plot) invisible(result)
+        else     return(result)
+    }
 }

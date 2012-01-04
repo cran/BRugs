@@ -7,9 +7,10 @@ function(numChains = 1)
     numChains <- as.integer(numChains)
     command <- paste("BugsEmbed.CompileGuard",              
         ";BugsEmbed.numChains :=", as.character(numChains), "; BugsEmbed.Compile", sep = "")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+    .CmdInterpreter(command)
     samplesSetFirstChain(1)
     samplesSetLastChain(numChains)
+    options("BRugsNextChain" = 1)
     if(getOption("BRugsVerbose")) 
         buffer()
 }

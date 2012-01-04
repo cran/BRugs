@@ -1,6 +1,6 @@
 "modelSetIts" <-
 function(factoryName, iterations)
-#   Set the length of adaptive phase
+#   Set maximum number of iterations in iterative algorithms
 {
     name <- sQuote(factoryName)
     command <- paste("UpdaterMethods.SetFactory(", name, 
@@ -8,5 +8,5 @@ function(factoryName, iterations)
                      "UpdaterMethods.SetIterations(", 
                      iterations,
                      ")", sep = "")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+    .CmdInterpreter(command)
 }

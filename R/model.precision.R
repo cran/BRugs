@@ -5,7 +5,7 @@ function(prec)
     if(!is.numeric(prec))
         stop("prec ", "must be numeric")
     prec <- as.integer(prec)
-    command <- paste("BugsMappers.SetPrec(", prec, ")")
-    invisible(.C("CmdInterpreter", command, nchar(command), 
-        integer(1), PACKAGE="BRugs"))
+    options(BRugsPrec=prec)
+#    command <- paste("BugsMappers.SetPrec(", prec, ")")
+#    invisible(.CmdInterpreter(command))
 }

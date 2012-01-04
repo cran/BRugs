@@ -8,5 +8,5 @@ function(factoryName, adaptivePhase)
                      "UpdaterMethods.SetAdaptivePhase(", 
                      adaptivePhase,
                      ")", sep = "")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+    .CmdInterpreter(command)
 }

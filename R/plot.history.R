@@ -7,23 +7,8 @@ function(node, plot = TRUE, colour = c("red", "blue", "green", "yellow", "black"
     if(length(sM) > 1 || sM != node)
         stop("node must be a scalar variable from the model, for arrays use samplesHistory")
     nodeName <- sQuote(node)
-    command <- paste("SamplesEmbed.SetVariable(", nodeName, ")")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
-    command <- "SamplesEmbed.SampleSize"
-    if (is.R()){
-      sampleSize <- as.integer(.C("Integer", command, nchar(command), 
-        integer(1), integer(1), PACKAGE="BRugs")[3])
-    } else {
-      sampleSize <- as.integer(.C("Integer", command, nchar(command), 
-        integer(1), integer(1), PACKAGE="BRugs")[3][[1]])
-    }
-    command <- "SamplesEmbed.SampleValues"
-    if (is.R())
-      sample <- .C("RealArray", command, nchar(command), real(sampleSize),
-                   sampleSize, integer(1), PACKAGE="BRugs")[[3]]
-    else
-      sample <- .C("RealArray", command, nchar(command), double(sampleSize),
-                   sampleSize, integer(1), PACKAGE="BRugs")[[3]]
+    sampleSize <- samplesSize(node)
+    sample <- samplesSample(node)
     end <- min(c(modelIteration(), samplesGetEnd()))
     thin <- samplesGetThin()
     numChains <- samplesGetLastChain() - samplesGetFirstChain() + 1

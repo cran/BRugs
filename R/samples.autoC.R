@@ -3,7 +3,7 @@ function(node, chain, beg = samplesGetBeg(), end = samplesGetEnd(),
 thin = samplesGetThin(), plot = TRUE, mfrow = c(3, 2), ask = NULL, ann = TRUE, ...)
 #   Plot auto correlation function
 {
-    if(is.null(ask)) {
+    if(plot && is.null(ask)) {
       if (is.R())
         ask <- !((dev.cur() > 1) && !dev.interactive())
       else
@@ -31,10 +31,12 @@ thin = samplesGetThin(), plot = TRUE, mfrow = c(3, 2), ask = NULL, ann = TRUE, .
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
     mons <- samplesMonitors(node)
-    if (is.R())
-      par(mfrow = mfrow, ask = ask, ann = ann)
-    else
-      par(mfrow = mfrow, ask = ask)
+    if(plot){
+        if (is.R())
+        par(mfrow = mfrow, ask = ask, ann = ann)
+        else
+        par(mfrow = mfrow, ask = ask)
+    }
     result <- lapply(mons, plotAutoC, plot = plot, ...)
     names(result) <- mons
     if(plot) invisible(result)

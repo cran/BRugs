@@ -6,7 +6,7 @@
 modelPrecision(prec)
 }
 \arguments{
-  \item{prec}{}
+  \item{prec}{precision used in the figures}
 }
 \details{It does not affect the precision of any calculations!}
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}

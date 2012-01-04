@@ -1,2 +1,0 @@
-list(a0 = 1, a.Base = 0, a.Trt = 0, alpha.BT = 0, 
-     alpha.Age = 0, alpha.V4 = 0, tau.b1 = 1, tau.b =1)

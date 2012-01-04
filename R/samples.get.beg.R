@@ -1,8 +1,6 @@
 "samplesGetBeg" <-
 function()
-#   Get the beg field
+#   Beginning iteration from which to compute sample statistics 
 {
-    command <- "SamplesEmbed.beg"
-    as.integer(.C("Integer", command, nchar(command), 
-        integer(1), integer(1), PACKAGE="BRugs")[[3]])
+    getOption("BRugsSamplesBeg")
 }

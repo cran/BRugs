@@ -12,10 +12,11 @@ function(fileName)
     command <- paste("BugsEmbed.SetFilePath(", sQuote(fileName), 
         ");BugsEmbed.ParseGuard;BugsEmbed.Parse", sep = "")
     if (!is.R()) {
-    	command <- gsub ("\\\\", "/", command)
-    	command <- gsub ("//", "/", command)
+        command <- gsub ("\\\\", "/", command)
+        command <- gsub ("//", "/", command)
     }
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE = "BRugs")
+    .CmdInterpreter(command)
+    .initGlobals()
     if(getOption("BRugsVerbose")) 
         buffer()
 }

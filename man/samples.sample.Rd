@@ -10,7 +10,9 @@ samplesSample(node)
 }
 \note{
 If sampling a vector of parameters, the function must be called for each parameter separately 
-such as \code{samplesSample(node[1])}.
+such as \code{samplesSample("node[1]")}.
+
+To get samples from more than only one scalar node, see \code{\link{samplesHistory}} with argument \code{plot=FALSE}.
 }
 \value{
 Values of the stored sample.

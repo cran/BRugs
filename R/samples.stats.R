@@ -22,7 +22,6 @@ thin = samplesGetThin())
     samplesSetLastChain(lastChain)
     thin <- max(c(thin, 1))
     samplesSetThin(thin)
-    nodeName <- sQuote(node)
 
     if (is.R()){
       result <- data.frame(mean=NULL, sd=NULL, MC_error = NULL, val2.5pc=NULL, 
@@ -33,10 +32,9 @@ thin = samplesGetThin())
                            start = numeric(), sample=numeric())
     }
     
-    for(i in seq(along=nodeName)){
-        command <- paste("SamplesEmbed.SetVariable(", nodeName[i], 
-        ");SamplesEmbed.StatsGuard;SamplesEmbed.Stats")
-        .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+    for(i in seq(along=node)){
+        command <- paste(.SamplesGlobalsCmd(node), "SamplesEmbed.StatsGuard;SamplesEmbed.Stats")
+        .CmdInterpreter(command)
         buffer <- file.path(tempdir(), "buffer.txt")
         rlb <- readLines(buffer)
         len <- length(rlb)
@@ -44,9 +42,9 @@ thin = samplesGetThin())
             result <- rbind(result, read.table(buffer))
         else{
             if(length(grep("val97.5pc", rlb)))
-                message("Variable ", nodeName[i], " has probably not been updated")
+                message("Variable ", node[i], " has probably not been updated")
             else
-                message("Variable ", nodeName[i], ": ", rlb)
+                message("Variable ", node[i], ": ", rlb)
         }
     }
     return(result)

@@ -8,15 +8,16 @@
 #    if(any(DoNotSetNA))
 #        warning("Some NA values formerly had a non-NA value -- left unchanged")
 #    values[DoNotSetNA] <- cv[DoNotSetNA]
-    command <- "BugsRobjects.SetVariable"
-    .C("CharArray", command, nchar(command), nodeLabel, nchar(nodeLabel), integer(1), PACKAGE="BRugs")
-    command <- "BugsRobjects.GetSize"
-    nodeSize <- .C("Integer", command, nchar(command), integer(1), integer(1), PACKAGE="BRugs")[3]
+    nodeSize <- .OpenBUGS(c("BugsRobjects.SetVariable", "BugsRobjects.GetSize"),
+                          c("CharArray","Integer"),
+                          c(nodeLabel,NA))[[2]]
     if(nodeSize == -1)
         stop(nodeLabel, " is not a node in BUGS model")
-    if(length(values) != nodeSize)
-        stop("length(values) does not correspond to the node size")
-    command <- "BugsRobjects.SetValues"
-    .C("RealArray", command, nchar(command), as.real(values), as.integer(nodeSize), 
-        integer(1), NAOK = TRUE, PACKAGE="BRugs")
+    numChains <- getNumChains()
+    if(length(values) != nodeSize*numChains)
+        stop("length(values) does not correspond to the node size and number of chains")
+    .OpenBUGS(c("BugsRobjects.SetVariable", "BugsRobjects.SetValues"),
+              c("CharArray","RealArray"),
+              list(nodeLabel,as.double(values)))[[2]]
+    invisible()
 }

@@ -7,7 +7,7 @@ function(node)
     nodeName <- sQuote(node)
     command <- paste("RanksEmbed.SetVariable(", nodeName, "); RanksEmbed.StatsGuard;",
                              "RanksEmbed.Stats")
-    .C("CmdInterpreter", command, nchar(command), integer(1), PACKAGE="BRugs")
+    .CmdInterpreter(command)
     buffer <- file.path(tempdir(), "buffer.txt")
     rlb <- readLines(buffer)
     len <- length(rlb)

@@ -1,26 +1,29 @@
 "bugsData" <- 
-function(data, fileName = file.path(getwd(), "data.txt"), digits = 5){
-  if(is.numeric(unlist(data)))
-        if(is.R()) {
-            write.datafile(lapply(data, formatC, digits = digits, format = "E"), fileName)
+    function(data, fileName = file.path(tempdir(), "data.txt"), format="E", digits = 5){
+        if (is.character(unlist(data))) { 
+            if(is.R()) {
+                data.list <- lapply(as.list(data), get, pos = parent.frame(2))
+                names(data.list) <- as.list(data)
+                write.datafile(lapply(data.list, formatC, digits = digits, format = format), fileName)
+            }
+            else {
+                data.list <- lapply(as.list(data), get, where = parent.frame(2))
+                names(data.list) <- unlist(data)
+                writeDatafileS4(data.list, towhere = "data.txt")
+            }
         }
-        else {
-            writeDatafileS4(data, towhere = "data.txt")
+        else if(is.list(data)) { 
+            data <- lapply(data, function(x){x <- if(is.character(x)||is.factor(x)) match(x, unique(x)) else x})
+            if(is.R()) {
+                write.datafile(lapply(data, formatC, digits = digits, format = format), fileName)
+            }
+            else {
+                writeDatafileS4(data, towhere = "data.txt")
+            }
         }
-  else {
-        if(is.R()) {
-            data.list <- lapply(as.list(data), get, pos = parent.frame(2))
-            names(data.list) <- as.list(data)
-            write.datafile(lapply(data.list, formatC, digits = digits, format = "E"), fileName)
-        }
-        else {
-            data.list <- lapply(as.list(data), get, where = parent.frame(2))
-            names(data.list) <- unlist(data)
-            writeDatafileS4(data.list, towhere = "data.txt")
-        }
+        else stop("Expected a list of data, a list or vector of variable names")      
+        invisible(fileName)
     }
-  invisible(fileName)
-}
 
 
 if(is.R()){
