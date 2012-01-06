@@ -1,4 +1,4 @@
-cb3581d595995e69c779eb2cd6ccded0 *DESCRIPTION
+d8b830bf95a3704820fed8592eb8b3b5 *DESCRIPTION
 b6612283c30f159c009b7d9c36b9fe6f *NAMESPACE
 3a151f789035dfe12130218a3cc3f8fd *NEWS
 2cf32afc90a9171f54dfe7bbe7ec74d5 *R/BRugsFit.R
@@ -19,7 +19,7 @@ eb359c3c290ec0d07dc1c4ad6b4bce9a *R/get.chain.R
 06bc5b28e39621fed097703b5a311ddd *R/info.modules.R
 2e680ecb15ffd236bf02d87c7ba3eaeb *R/info.node.R
 8675c5998b3f0b4ee069a82e51e65760 *R/info.updaters.R
-e48dc58ce203f5d862cd321ccae4de33 *R/internal.R
+8f7af017492f18ae7f7597cd08f3c114 *R/internal.R
 6adb343e7c70faddb62dd5f879f3af34 *R/model.adaptivePhase.R
 d31a257e872e4df51f3e5d7c3a093d44 *R/model.check.R
 c4ec7846b8d4ef3b15580a8458f728c0 *R/model.compile.R
@@ -147,7 +147,7 @@ ca630087b4f71f9928217659c5b9fb5d *man/samples.coda.Rd
 3d816209da27d4b343a97585497c0dd0 *man/windows/loadOpenBUGS.Rd
 3827789f7faf65bf8eaab0fb025b245a *man/write.datafile.Rd
 26bc0650d71e2156f16d5a0524776977 *man/write.model.Rd
-ddba4b0621ea5c6e48332a2fe03aa9cb *src/BugsHelper.c
+05f6c9d15dcca15905ce0d48b9043c12 *src/BugsHelper.c
 d3c9cd488c37fd211ad00b1c968c310a *src/Makefile.win
 67b1265af3a5c535b381d9f42777adca *src/Makevars.in
 ad5cbf30adfd2b6529a90e75240b761f *tests/BRugs.R
