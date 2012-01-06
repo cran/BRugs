@@ -49,7 +49,7 @@ EXAMPLE
 
 	"BugsEmbed.SetFilePath('/scratch/chris/lib/R/BRugs/OpenBUGS/Examples/Ratsdata.txt');BugsEmbed.LoadDataGuard;BugsEmbed.LoadData" 0
 
-	/path/to/BugsHelper "/tmp/RtmpaRQois" "/tmp/RtmpaRQois_trash" "file327b23c6.bug" "BugsEmbed.SetFilePath('/path/to/Examples/Ratsmodel.txt');BugsEmbed.ParseGuard;BugsEmbed.Parse" 0 "BugsEmbed.SetFilePath('/path/to/Examples/Ratsdata.txt');BugsEmbed.LoadDataGuard;BugsEmbed.LoadData" 0
+	/path/to/BugsHelper "/tmp/RtmpaRQois" "/tmp/RtmpaRQois/trash" "file327b23c6.bug" "BugsEmbed.SetFilePath('/path/to/Examples/Ratsmodel.txt');BugsEmbed.ParseGuard;BugsEmbed.Parse" 0 "BugsEmbed.SetFilePath('/path/to/Examples/Ratsdata.txt');BugsEmbed.LoadDataGuard;BugsEmbed.LoadData" 0
 
 
 TODO

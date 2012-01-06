@@ -47,7 +47,7 @@ dquote <- function(x){
     tempDir <- getOption("BRugsTmpdir")
     ## Don't want internalize/externalize to overwrite the command
     ## output buffer, so redirect its output to a separate trash can.
-    trashDir <- paste(tempDir, "_trash", sep="")
+    trashDir <- file.path(tempDir, "trash", fsep="/")
     extFile <- getOption("BRugsExtFile")
     cmdFile <- paste(tempDir, "cmds.txt", sep="/")
     bugsPath <- system.file("exec", paste("BugsHelper", if(.Platform$OS.type == "windows") ".exe", sep=""), package="BRugs")
