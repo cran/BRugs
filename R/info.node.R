@@ -23,7 +23,7 @@ infoNodeMethods <- function(nodeLabel)
     command <- paste("BugsEmbed.SetNode(",nodeName,"); BugsEmbed.Methods");
     .CmdInterpreter(command)
     buffer <- file.path(tempdir(), "buffer.txt")
-    result <- read.fwf(buffer, c(25, 25, 25, 25), skip = 1, as.is=TRUE, col.names=c("Node","Type", "Size", "Depth"))
+    result <- read.table(buffer, sep="\t", skip = 1, as.is=TRUE, col.names=c("empty", "Node", "Type", "Size", "Depth"))[,-1]
     for (i in 1:2)
         result[,i] <- gsub(" ", "", result[,i])
     result
@@ -35,7 +35,7 @@ infoNodeTypes <- function(nodeLabel)
     command <- paste("BugsEmbed.SetNode(",nodeName,"); BugsEmbed.Types");
     .CmdInterpreter(command)
     buffer <- file.path(tempdir(), "buffer.txt")
-    result <- read.fwf(buffer, c(25, 25), skip = 1, as.is=TRUE, col.names=c("Node","Type"))
+    result <- read.table(buffer, sep="\t", skip = 1, as.is=TRUE, col.names=c("empty", "Node", "Type"))[,-1]
     for (i in 1:2)
         result[,i] <- gsub(" ", "", result[,i])
     result

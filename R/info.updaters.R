@@ -8,8 +8,8 @@ infoUpdatersbyName <- function()
     if (readLines(buffer)[1]=="BugsCmds:NotCompiled")
         stop("Model not compiled")
     buffer <- file.path(tempdir(), "Updater types.txt")
-    result <- read.fwf(buffer, c(25, 50, 10, 10), skip = 1, as.is=TRUE,
-                       row.names=1, col.names=c("Node","Type", "Size","Depth"))
+    result <- read.table(buffer, sep="\t", skip=1, as.is=TRUE,
+                       row.names=2, col.names=c("empty", "Node", "Type", "Size", "Depth"))[,-1]
     ## strip leading and trailing spaces
     for (i in 1:2) { 
         result[,i] <- gsub("^ +", "\\1", result[,i])
@@ -30,8 +30,8 @@ infoUpdatersbyDepth <- function()
     if (readLines(buffer)[1]=="BugsCmds:NotCompiled")
         stop("Model not compiled")
     buffer <- file.path(tempdir(), "Updater types.txt")
-    result <- read.fwf(buffer, c(25, 50, 10, 10), skip = 1, as.is=TRUE,
-                       row.names=1, col.names=c("Node","Type", "Size","Depth"))
+    result <- read.table(buffer, sep="\t", skip=1, as.is=TRUE,
+                       row.names=2, col.names=c("empty", "Node", "Type", "Size", "Depth"))[,-1]
     ## strip leading and trailing spaces
     for (i in 1:2) { 
         result[,i] <- gsub("^ +", "\\1", result[,i])
