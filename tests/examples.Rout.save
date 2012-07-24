@@ -68,7 +68,7 @@ Type 'q()' to quit R.
 + }
 Loading required package: coda
 Loading required package: lattice
-Welcome to BRugs connected to OpenBUGS version 3.2.1
+Welcome to BRugs connected to OpenBUGS version 3.2.2
 model is syntactically correct
 data loaded
 model compiled
@@ -89,7 +89,7 @@ Initializing chain 1:
 model is initialized
 model is already initialized
 5000 updates took 0 s
-can not calculate deviance for this model
+can not calculate DIC for this model
 monitor set for variable 'bronchitis'
 monitor set for variable 'either'
 monitor set for variable 'lung.cancer'
@@ -128,7 +128,7 @@ Initializing chain 1:
 model is initialized
 model is already initialized
 5000 updates took 0 s
-can not calculate deviance for this model
+can not calculate DIC for this model
 monitor set for variable 'Sigma2'
 monitor set for variable 'rho'
 monitor set for variable 'tau'
@@ -187,7 +187,7 @@ Initializing chain 1:
 initial values loaded but chain contain uninitialized variables
 initial values generated, model initialized
 5000 updates took 0 s
-can not calculate deviance for this model
+can not calculate DIC for this model
 monitor set for variable 'P'
 monitor set for variable 'lambda'
 monitor set for variable 'sigma'
