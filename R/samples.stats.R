@@ -33,7 +33,7 @@ thin = samplesGetThin())
     }
     
     for(i in seq(along=node)){
-        command <- paste(.SamplesGlobalsCmd(node), "SamplesEmbed.StatsGuard;SamplesEmbed.Stats")
+        command <- paste(.SamplesGlobalsCmd(node[i]), "SamplesEmbed.StatsGuard;SamplesEmbed.Stats")
         .CmdInterpreter(command)
         buffer <- file.path(tempdir(), "buffer.txt")
         rlb <- readLines(buffer)

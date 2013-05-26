@@ -1,6 +1,6 @@
-8076fddd3d0f9bb8c96a4de423fed78d *DESCRIPTION
+0e03cac69f0ac939a6b408857aa36d27 *DESCRIPTION
 9cf0630405f2ca30f56573cc3e27ec57 *NAMESPACE
-9a6b477caece59f0426d6e1b2102be43 *NEWS
+12d85cf47ea032a2266c18be4c19109e *NEWS
 2cf32afc90a9171f54dfe7bbe7ec74d5 *R/BRugsFit.R
 850cba5c6ca4f2501a8b028fb7221bf1 *R/bgr.grid.R
 e4b0b742a42423815a6c3988d117a7ee *R/bgr.point.R
@@ -66,7 +66,7 @@ d7dd73c43b1a24b2f0e53001d09217f5 *R/samples.set.beg.R
 dd79f1596045ee56647ebb1f4c9cc5d2 *R/samples.set.lastChain.R
 0b25f78fafe1c8243a4ee92f1e7f9b3a *R/samples.set.thin.R
 e3fd161992ba40bb97fe6a7a90161da3 *R/samples.size.R
-e3ac022616a9f276af1905a3129f0f39 *R/samples.stats.R
+195c9b71134d1cbfd3c9423c48b4480a *R/samples.stats.R
 0b97fff5cc946c50c2a30eb0c576af5a *R/set.values.R
 31795488d38b9174533eff53cdfaab29 *R/summary.clear.R
 579917c6624a0d167658f87e84589814 *R/summary.set.R
@@ -87,8 +87,8 @@ b4378d7e02bc424352a6c0f3558b43d2 *R/write.model.R
 5cf5838b49490ec8325a1d105157418e *configure
 6cac837bbfee3cbb988ce1a96f7a9869 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
-415350c888ea5f1b30668670548b1497 *data/ratsdata.RData
-8a178316f8a746c17a6de1df7e11038f *data/ratsinits.RData
+06da1386ecee2d9b0c77658f697c255e *data/ratsdata.RData
+9439ff8767e8db01018d875e7aa83664 *data/ratsinits.RData
 ae9d44aed30e864ef2757b10da536f60 *inst/CITATION
 d6173766fa2d9f34a5fc00034cf67e44 *man/BRugs.Rd
 53036d0ae1cb8b7f898659d9e356530c *man/BRugsFit.Rd

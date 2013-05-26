@@ -1,6 +1,11 @@
 Changes to BRugs:
 =====================
 
+Version 0.8.1  (26 May 2013)
+-------------
+Bugfix: samplesStats(node) did not work on node vectors of length > 1
+
+
 Version 0.8.0  (23 July 2012)
 -------------
 BRugs now works with an existing installation of OpenBUGS (>?)= 3.2.2.
