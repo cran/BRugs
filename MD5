@@ -1,13 +1,13 @@
-0e03cac69f0ac939a6b408857aa36d27 *DESCRIPTION
-9cf0630405f2ca30f56573cc3e27ec57 *NAMESPACE
-12d85cf47ea032a2266c18be4c19109e *NEWS
+136ac31273335dd9533c97b7bd2fe672 *DESCRIPTION
+a3910531e9d32a11fe8312224edfd30d *NAMESPACE
+85587718f3ebb9bfb5e22c729435f060 *NEWS
 2cf32afc90a9171f54dfe7bbe7ec74d5 *R/BRugsFit.R
 850cba5c6ca4f2501a8b028fb7221bf1 *R/bgr.grid.R
 e4b0b742a42423815a6c3988d117a7ee *R/bgr.point.R
 89823a893c9cff952262af91906abaaf *R/buffer.R
 1afb98139cad42a830aeecac974244dc *R/bugs.data.R
 52222a522fa22f0ae14954cb4218cfa4 *R/bugs.inits.R
-3eeaf42b7115b07b718a7208b847f3d4 *R/buildMCMC.R
+f663c5d0477367b090a98a4e7dfee03d *R/buildMCMC.R
 48cec6db119dfbe76eac7b7bd03d7910 *R/dic.clear.R
 f3833a9a95b53432f653233d5506e6c1 *R/dic.set.R
 065a50293cbd79c961e3bcbd060b4098 *R/dic.stats.R
@@ -75,7 +75,7 @@ e1e08a281da16c4b1618244b3a069b00 *R/summary.stats.R
 7f2560cbeccbc44b1f049504ac02056d *R/unix/internal.R
 73484a6bb49ae46e4c18087696db909c *R/unix/zzz.R
 60717172cc5a5618ed4d9e8e5ba97681 *R/unix/zzz.R.in
-e9d718f30f8e6761d40ba110ad15ddbc *R/windows/findOpenBUGS.R
+b28db4566c094ada9eee9822ebd44894 *R/windows/findOpenBUGS.R
 731ae287ba3746d9a9cd2ae0c96d289c *R/windows/help.R
 79e672c7555016d29583d47c66f08d64 *R/windows/internal.R
 c03da77c619781e90baa7571e25baf5a *R/windows/zzz.R

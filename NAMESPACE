@@ -1,5 +1,5 @@
 importFrom(coda, mcmc, mcmc.list)
-importFrom(utils, compareVersion, maintainer)
+importFrom(utils, compareVersion, maintainer, packageDescription, readRegistry)
 export(BRugsFit, bugsData, bugsInits, buildMCMC,
 dicClear, dicSet, dicStats,
 getNumChains, help.BRugs, help.WinBUGS,

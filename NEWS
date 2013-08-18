@@ -1,6 +1,12 @@
 Changes to BRugs:
 =====================
 
+Version 0.8.2 (18 August 2013)
+-------------
+Bugfix: remove coda from"Depends:" as "Imports:" is sufficient.
+Bugfix: Remove ":::" constructs to access function from utils that are imported.
+
+
 Version 0.8.1  (26 May 2013)
 -------------
 Bugfix: samplesStats(node) did not work on node vectors of length > 1

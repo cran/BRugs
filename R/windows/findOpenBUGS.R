@@ -2,10 +2,10 @@ findOpenBUGS <- function()
 {
     dir <- Sys.getenv("OpenBUGS_PATH")
     if(!nchar(dir)){
-        deps <- utils:::packageDescription("BRugs", fields="SystemRequirements")
+        deps <- packageDescription("BRugs", fields="SystemRequirements")
         version.req <- gsub(".*OpenBUGS ?\\(>= ?(.+)\\).*", "\\1", deps)
 
-        ob.reg <- try(utils:::readRegistry("Software\\OpenBUGS", "HLM", view = "32-bit"), silent = TRUE)
+        ob.reg <- try(readRegistry("Software\\OpenBUGS", "HLM", view = "32-bit"), silent = TRUE)
         if (inherits(ob.reg, "try-error")) {
             warning("OpenBUGS ", version.req, " or greater must be installed\n(if so, this indicates missing registry keys of OpenBUGS).\nSetting the environment variable 'OpenBUGS_PATH' in advance of loading 'BRugs' overwrites the path.\nSee ?loadOpenBUGS in order to load OpenBUGS manually.")
             return()
@@ -29,7 +29,7 @@ findOpenBUGS <- function()
         }
 
         ## OpenBUGS installation location
-        dir <- utils:::readRegistry(paste("Software","OpenBUGS",rnames,sep="\\"), "HLM", view = "32-bit")[["InstallPath"]]
+        dir <- readRegistry(paste("Software","OpenBUGS",rnames,sep="\\"), "HLM", view = "32-bit")[["InstallPath"]]
     } else {
         if(!file.exists(file.path(dir, "libOpenBUGS.dll"))){
             warning("Environment variable OpenBUGS_PATH found but cannot access ", file.path(dir, "libOpenBUGS.dll"))
