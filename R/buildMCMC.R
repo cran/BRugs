@@ -2,10 +2,6 @@ buildMCMC <- function(node, beg = samplesGetBeg(), end = samplesGetEnd(),
     firstChain = samplesGetFirstChain(), lastChain = samplesGetLastChain(), 
     thin = samplesGetThin()){
  
-    if(!is.R() && !require("coda"))
-        stop("package 'coda' is required to use this function")
-
- 
     oldBeg <- samplesGetBeg()
     oldEnd <- samplesGetEnd()
     oldFirstChain <- samplesGetFirstChain()
