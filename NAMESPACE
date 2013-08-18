@@ -1,5 +1,6 @@
 importFrom(coda, mcmc, mcmc.list)
-importFrom(utils, compareVersion, maintainer, packageDescription, readRegistry)
+importFrom(utils, compareVersion, maintainer, packageDescription)
+if(tools:::.OStype() == "windows") importFrom(utils, readRegistry)
 export(BRugsFit, bugsData, bugsInits, buildMCMC,
 dicClear, dicSet, dicStats,
 getNumChains, help.BRugs, help.WinBUGS,
