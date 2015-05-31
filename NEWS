@@ -1,6 +1,13 @@
 Changes to BRugs:
 =====================
 
+
+Version 0.8.4 (31 May 2015)
+-------------
+problem when Openbugs_PATH environment variable was set but version did not 
+get propagated correctly
+
+
 Version 0.8.2 (18 August 2013)
 -------------
 Bugfix: remove coda from"Depends:" as "Imports:" is sufficient.

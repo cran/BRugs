@@ -35,7 +35,7 @@ findOpenBUGS <- function()
             warning("Environment variable OpenBUGS_PATH found but cannot access ", file.path(dir, "libOpenBUGS.dll"))
             return()
         }
-        version.inst <- NA
+        version.inst <- version.full <- NA
     }
     list(dir=dir, version=version.full)
 }
