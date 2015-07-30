@@ -1,6 +1,10 @@
 importFrom(coda, mcmc, mcmc.list)
-importFrom(utils, compareVersion, maintainer, packageDescription)
+importFrom(utils, compareVersion, maintainer, packageDescription, browseURL, read.table)
 if(tools:::.OStype() == "windows") importFrom(utils, readRegistry)
+importFrom("grDevices", "dev.cur", "dev.interactive")
+importFrom("graphics", "lines", "par")
+importFrom("stats", "acf", "density", "quantile", "sd")
+
 export(BRugsFit, bugsData, bugsInits, buildMCMC,
 dicClear, dicSet, dicStats,
 getNumChains, help.BRugs, help.WinBUGS,

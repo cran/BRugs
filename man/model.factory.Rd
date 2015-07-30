@@ -14,7 +14,7 @@ modelDisable(factory)
   \item{factory}{Character (length 1) name of the factory to be
     disabled/enabled, for example \code{"conjugate gamma"}.  See
 
-    \url{http://www.openbugs.info/Manuals/ModelMenu.html#Updateroptions}
+    \url{http://www.openbugs.net/Manuals/ModelMenu.html#Updateroptions}
 
     for more information.  A list of the currently-used updaters
     in a compiled model is given by \code{\link{infoUpdatersbyName}} or

@@ -1,6 +1,6 @@
-e231093d2d2cf38b68c97a318501f569 *DESCRIPTION
-a1454b67ccec6cda704fd8af56fa8de0 *NAMESPACE
-7f2295693301b003e10a2c45ba8744fe *NEWS
+56f7aae58909d13f84111f23d5153320 *DESCRIPTION
+781037c0b600649b3cfd2e2b6b0d7fcd *NAMESPACE
+618cb34f29cbd0f81bc73da1b1a4ac03 *NEWS
 2cf32afc90a9171f54dfe7bbe7ec74d5 *R/BRugsFit.R
 850cba5c6ca4f2501a8b028fb7221bf1 *R/bgr.grid.R
 e4b0b742a42423815a6c3988d117a7ee *R/bgr.point.R
@@ -90,7 +90,7 @@ d41d8cd98f00b204e9800998ecf8427e *configure.win
 2dba90511836320c290e3226cfab1976 *data/ratsdata.RData
 6ed850dc91cd1a3aa75e746e86bef937 *data/ratsinits.RData
 ae9d44aed30e864ef2757b10da536f60 *inst/CITATION
-d6173766fa2d9f34a5fc00034cf67e44 *man/BRugs.Rd
+0d07f99aa2352590b95817066137b258 *man/BRugs.Rd
 53036d0ae1cb8b7f898659d9e356530c *man/BRugsFit.Rd
 31acfa7aa636fa7191c38ed041090830 *man/bgr.point.Rd
 e83f82867160f130326835e461102b30 *man/buffer.Rd
@@ -111,7 +111,7 @@ f7880500d3a004db77694944070ec298 *man/model.adaptivePhase.Rd
 e10902debed0c5e3edc924a931db0a5c *man/model.check.Rd
 4a0c49fd2cc5d3629bbfd54c2e0725ad *man/model.compile.Rd
 3ec1ea9ffa692369d6f87971ee4899e8 *man/model.data.Rd
-1c80c83c88aa77e9fe2f82163db5426a *man/model.factory.Rd
+c9dbaf79150d4985c99d0f433e6b41f8 *man/model.factory.Rd
 fc4bbee6e3a8a967e8daf61bf1d106d3 *man/model.gen.inits.Rd
 fcae5f91fac1cc57290676c15459127b *man/model.inits.Rd
 fa231216f9933f93641603979fe9c1ac *man/model.iteration.Rd

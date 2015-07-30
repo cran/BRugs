@@ -28,7 +28,7 @@ help.BRugs(browser = getOption("browser"))
 }
 \section{Permission and Disclaimer}{
     BRugs is released under the GNU GENERAL PUBLIC LICENSE.
-    For details see \url{http://openbugs.info/} or type \code{help.BRugs()}.
+    For details see \url{http://www.openbugs.net/} or type \code{help.BRugs()}.
 
     More informally, potential users are reminded to be extremely careful if using this program for serious
     statistical analysis. We have tested the program on quite a wide set of examples, but be particularly careful
@@ -40,7 +40,7 @@ help.BRugs(browser = getOption("browser"))
     within the Windows interface to OpenBUGS.  This should give a "Trap"
     window, which indicates an internal problem with OpenBUGS. See
 
-    \url{http://www.openbugs.info/Manuals/TipsTroubleshooting.html#TrapMessages}
+    \url{http://www.openbugs.net/Manuals/TipsTroubleshooting.html#TrapMessages}
 
     for suggestions for how to interpret these problematic error
     messages.
