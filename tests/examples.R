@@ -35,11 +35,13 @@ test.pattern <- paste("^", test.models, ".*\\.txt$", sep="")
 ### Test for posterior means within 10 percent of previously saved values
 
 res.true <- dget(file="examples.stats.R")
+
+exfiles <- unlist(lapply(test.pattern, function(tp) dir(options()$OpenBUGSExamples, pattern=tp, full.names=TRUE)))
+ok <- file.copy(unique(exfiles), tempdir())
+if(!all(ok)) 
+    stop("Some files could not be copied from OpenBUGS examples to the temporary directory")
+
 for (i in seq(along=test.models)) {
-    exfiles <- dir(options()$OpenBUGSExamples, pattern=test.pattern[i], full.names=TRUE)
-    ok <- file.copy(exfiles, tempdir())
-    if(!all(ok)) 
-        stop("Some files could not be copied from OpenBUGS examples to the temporary directory")
     fit <- BRugsFit(data=test.datafile[i], inits=test.inits[i], 
                     modelFile=test.modelfile[i], para=test.params[[test.models[i]]],
                     nBurnin=5000, nIter=20000, nThin=1, numChains=1, seed=1,

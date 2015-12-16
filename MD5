@@ -1,6 +1,6 @@
-56f7aae58909d13f84111f23d5153320 *DESCRIPTION
+76be29d314274c0388f9eb07a1fe6756 *DESCRIPTION
 781037c0b600649b3cfd2e2b6b0d7fcd *NAMESPACE
-618cb34f29cbd0f81bc73da1b1a4ac03 *NEWS
+36cb6333ebc5ad0188fa0584b69aa2b5 *NEWS
 2cf32afc90a9171f54dfe7bbe7ec74d5 *R/BRugsFit.R
 850cba5c6ca4f2501a8b028fb7221bf1 *R/bgr.grid.R
 e4b0b742a42423815a6c3988d117a7ee *R/bgr.point.R
@@ -87,8 +87,8 @@ b4378d7e02bc424352a6c0f3558b43d2 *R/write.model.R
 5cf5838b49490ec8325a1d105157418e *configure
 6cac837bbfee3cbb988ce1a96f7a9869 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
-2dba90511836320c290e3226cfab1976 *data/ratsdata.RData
-6ed850dc91cd1a3aa75e746e86bef937 *data/ratsinits.RData
+41d3934561ba8488d3d9ac4dc8678dfa *data/ratsdata.RData
+181bcbfea6ea8e9f8cda24fcc435691d *data/ratsinits.RData
 ae9d44aed30e864ef2757b10da536f60 *inst/CITATION
 0d07f99aa2352590b95817066137b258 *man/BRugs.Rd
 53036d0ae1cb8b7f898659d9e356530c *man/BRugsFit.Rd
@@ -148,12 +148,12 @@ ca630087b4f71f9928217659c5b9fb5d *man/samples.coda.Rd
 3827789f7faf65bf8eaab0fb025b245a *man/write.datafile.Rd
 26bc0650d71e2156f16d5a0524776977 *man/write.model.Rd
 05f6c9d15dcca15905ce0d48b9043c12 *src/BugsHelper.c
-f11de821c06711d883ff5f148a8bafbb *src/Makefile.win
+d3c9cd488c37fd211ad00b1c968c310a *src/Makefile.win
 67b1265af3a5c535b381d9f42777adca *src/Makevars.in
 ad5cbf30adfd2b6529a90e75240b761f *tests/BRugs.R
 d4dcb39b88816c7fe45755882c9fe5fd *tests/BRugs.Rout.save
-122f9426bca162bf81d79bffa72bf63e *tests/examples.R
-8a5177ff82475b082c75b06f8dd4ab2d *tests/examples.Rout.save
+d8be9f36e39da7677fb8d66a1b552f21 *tests/examples.R
+2177cbf953c3a6ed2c830827be328dde *tests/examples.Rout.save
 0d73d4081d890413061be1665de4a2e1 *tests/examples.stats.R
 ebc0fc504ce7abc8f6adac5968217066 *tests/functions.R
 fb47d77865aa5293e7188bde5edcb493 *tests/functions.Rout.save

@@ -1,6 +1,10 @@
 Changes to BRugs:
 =====================
 
+Version 0.8.6 (16 Dec 2015)
+-------------
+adapt tests for changes in file.copy() results
+
 Version 0.8.5 (29 July 2015)
 -------------
 import from base packages, fix URLs
