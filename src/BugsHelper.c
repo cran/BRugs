@@ -89,7 +89,7 @@ extern void UseConsole ();
 
 void read_input_real(char *tmpdir, double **out, int *len, int cmdno) {
   char *fname;
-  struct stat buf;
+  struct stat buf={.st_dev = 0};
   FILE *ifp;
   double tmp;
   fname = (char *) malloc(strlen(tmpdir) + 16);
@@ -115,7 +115,7 @@ void read_input_real(char *tmpdir, double **out, int *len, int cmdno) {
 
 void read_input_char(char *tmpdir, char **out, int *len, int cmdno) {
   char *fname;
-  struct stat buf;
+  struct stat buf={.st_dev = 0};
   FILE *ifp;
   fname = (char *) malloc(strlen(tmpdir) + 16);
   sprintf(fname, "%s/input%d.txt", tmpdir, cmdno);
@@ -252,7 +252,7 @@ void do_BugsCmd(char *cmd) {
 
 int do_Internalize(char *tmpdir, char *extfile){
   char *extpath, *int_cmd;
-  struct stat buf;
+  struct stat buf={.st_dev = 0};
   int res;
   extpath = (char *) malloc(strlen(tmpdir) + 2 + strlen(extfile));
   sprintf(extpath, "%s/%s", tmpdir, extfile);
@@ -289,7 +289,7 @@ int main(int argc, char **argv){
   char *cmd, cmd_type;
   char *output_to_buffer_cmd = "BugsMappers.SetDest(2)";
   FILE *ifp;
-  struct stat buf;
+  struct stat buf={.st_dev = 0};
   do_Cmd(output_to_buffer_cmd);
   do_TempDir(trashdir);
   do_Internalize(tmpdir, extfile);

@@ -12,7 +12,7 @@ citEntry(entry = "article",
     pages        = "12--17",
     number       = 1,
     volume       = 6,
-    url          = "http://cran.r-project.org/doc/Rnews/",
+    url          = "https://cran.r-project.org/doc/Rnews/",
     textVersion  = paste("Thomas, A., O'Hara, B., Ligges, U., and Sturtz, S. (2006).",
         "Making BUGS Open.",
         "R News 6 (1), 12-17.")

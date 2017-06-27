@@ -1,6 +1,10 @@
 Changes to BRugs:
 =====================
 
+Version 0.9.0 (26 Jun 2017)
+-------------
+fixes for new Windows toolchain and GCC7
+
 Version 0.8.6 (16 Dec 2015)
 -------------
 adapt tests for changes in file.copy() results
