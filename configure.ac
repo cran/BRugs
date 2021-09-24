@@ -1,4 +1,4 @@
-AC_INIT([BRugs], [0.8])
+AC_INIT([BRugs],[0.8])
 
 ## TODO only runs on x86 Linux - give error on other unixes.  
 
@@ -6,8 +6,7 @@ AC_PREFIX_DEFAULT(/usr/local)
 AC_PREFIX_PROGRAM([OpenBUGS])
 
 AC_ARG_WITH([openbugs],
-	AC_HELP_STRING([--with-openbugs=PATH],
-			[the location of the OpenBUGS installation, by default /usr/local]),
+	AS_HELP_STRING([--with-openbugs=PATH],[the location of the OpenBUGS installation, by default /usr/local]),
             [openbugs_path=$withval])
 
 if test [ -n "$openbugs_path" ] ; then
@@ -57,5 +56,7 @@ DYNLIBEXT="so"
 AC_SUBST(OPENBUGS)
 AC_SUBST(OPENBUGSDOC)
 AC_SUBST(DYNLIBEXT)
-AC_OUTPUT(src/Makevars)
-AC_OUTPUT(R/unix/zzz.R)
+AC_CONFIG_FILES([src/Makevars])
+AC_OUTPUT
+AC_CONFIG_FILES([R/unix/zzz.R])
+AC_OUTPUT

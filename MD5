@@ -1,4 +1,4 @@
-fda1d6d25bf7f9904ec7ec51d2d9a596 *DESCRIPTION
+d7b21882495b368a2625a3763995bf21 *DESCRIPTION
 781037c0b600649b3cfd2e2b6b0d7fcd *NAMESPACE
 2c48bf9cb07eeb9a31f9851848f30845 *NEWS
 2cf32afc90a9171f54dfe7bbe7ec74d5 *R/BRugsFit.R
@@ -84,8 +84,8 @@ fbc1f6feb98f43fdab7d176264f9c69f *R/windows/zzz.i386.R
 efd33b6a49c441f37e25ba137cf1dc31 *R/write.datafile.R
 b4378d7e02bc424352a6c0f3558b43d2 *R/write.model.R
 70b81c32d0aacd48e46ce871b9e5011d *R/zzz.R
-5cf5838b49490ec8325a1d105157418e *configure
-6cac837bbfee3cbb988ce1a96f7a9869 *configure.ac
+5b8c18d00aa65a8e7ed75a69d6603c31 *configure
+4aa4c44fac5f649c7a049d7ec85425b0 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 e9e255d1978e4516290579c765b526f3 *data/ratsdata.RData
 cca77e144c293a756c695c1ccd833735 *data/ratsinits.RData
