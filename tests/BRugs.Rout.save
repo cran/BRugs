@@ -80,7 +80,7 @@ Type 'q()' to quit R.
 + }
 Loading required package: coda
 Loading required package: lattice
-Welcome to BRugs connected to OpenBUGS version 3.2.2
+Welcome to BRugs connected to OpenBUGS version 3.2.3
 model is syntactically correct
 data loaded
 model compiled

@@ -26,8 +26,9 @@ If an attempt is made to execute this function in an inappropriate context the g
 }
 \references{
 Neal, R. (1998): Suppressing random walks in Markov chain Monte Carlo using ordered over-relaxation. 
-In M.I. Jordan (Ed.): \emph{Learning in Graphical Models}, Kluwer Academic Publishers, Dordrecht, 205-230.
-\url{http://www.cs.utoronto.ca/~radford/publications.html}
+In M.I. Jordan (Ed.): \emph{Learning in Graphical Models}, Kluwer
+Academic Publishers, Dordrecht, 205-230.
+\url{https://glizen.com/radfordneal/publications.html}
 }
 \seealso{\code{\link{BRugs}}, \code{\link{help.WinBUGS}}}
 \keyword{interface}

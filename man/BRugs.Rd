@@ -28,7 +28,7 @@ help.BRugs(browser = getOption("browser"))
 }
 \section{Permission and Disclaimer}{
     BRugs is released under the GNU GENERAL PUBLIC LICENSE.
-    For details see \url{http://www.openbugs.net/} or type \code{help.BRugs()}.
+    For details type \code{help.BRugs()}.
 
     More informally, potential users are reminded to be extremely careful if using this program for serious
     statistical analysis. We have tested the program on quite a wide set of examples, but be particularly careful
@@ -38,9 +38,10 @@ help.BRugs(browser = getOption("browser"))
 
     If BRugs does cause R to crash, it is advised to run the model from
     within the Windows interface to OpenBUGS.  This should give a "Trap"
-    window, which indicates an internal problem with OpenBUGS. See
+    window, which indicates an internal problem with OpenBUGS.
 
-    \url{http://www.openbugs.net/Manuals/TipsTroubleshooting.html#TrapMessages}
+    %%Seex
+    %%rl{https://www.openbugs.net/Manuals/TipsTroubleshooting.html#TrapMessages}
 
     for suggestions for how to interpret these problematic error
     messages.

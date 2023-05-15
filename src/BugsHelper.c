@@ -73,7 +73,7 @@ AUTHOR
 
 /* OpenBUGS API functions from libOpenBUGS.so */
 #include <errno.h>
-extern void CLI ();
+extern void CLI (void);
 extern void BugsCmd(char **command, int *len);
 extern void CharArray (char **procedure, int *len, char **x, int *lenX, int *res);
 extern void CmdInterpreter (char **command, int *len, int *res);
@@ -84,16 +84,21 @@ extern void Real (char **procedure, int *len, double *x, double *y, int *res);
 extern void RealArray (char **procedure, int *len, double *x, int *lenX, int *res);
 extern void SetWorkingDir (char **path, int *len);
 extern void SetTempDir(char **path, int *len);
-extern void UseBufferFile ();
-extern void UseConsole ();
+extern void UseBufferFile (void);
+extern void UseConsole (void);
 
 void read_input_real(char *tmpdir, double **out, int *len, int cmdno) {
   char *fname;
   struct stat buf={.st_dev = 0};
   FILE *ifp;
   double tmp;
-  fname = (char *) malloc(strlen(tmpdir) + 16);
-  sprintf(fname, "%s/input%d.txt", tmpdir, cmdno);
+  size_t sz = strlen(tmpdir) + 16;
+  fname = (char *) malloc(sz);
+  if(fname == NULL) {
+      fprintf(stderr, "allocation failed in BugsHelper");
+      exit(1);
+  }
+  snprintf(fname, sz, "%s/input%d.txt", tmpdir, cmdno);
   if (stat(fname, &buf) != -1) {
     *len = 0;
     ifp = fopen(fname, "r");
@@ -117,8 +122,13 @@ void read_input_char(char *tmpdir, char **out, int *len, int cmdno) {
   char *fname;
   struct stat buf={.st_dev = 0};
   FILE *ifp;
+  size_t sz = strlen(tmpdir) + 16;
   fname = (char *) malloc(strlen(tmpdir) + 16);
-  sprintf(fname, "%s/input%d.txt", tmpdir, cmdno);
+  if(fname == NULL) {
+      fprintf(stderr, "allocation failed in BugsHelper");
+      exit(1);
+  }
+  snprintf(fname, sz, "%s/input%d.txt", tmpdir, cmdno);
   if (stat(fname, &buf) != -1) {
     *len = buf.st_size;
     *out = (char *) malloc(*len + 1);
@@ -139,8 +149,13 @@ void read_input_char(char *tmpdir, char **out, int *len, int cmdno) {
 void write_output_int(char *tmpdir, int out, int cmdno) {
   char *fname;
   FILE *ofp;
-  fname = (char *) malloc(strlen(tmpdir) + 16);
-  sprintf(fname, "%s/output%d.txt", tmpdir, cmdno);
+  size_t sz = strlen(tmpdir) + 16;
+  fname = (char *) malloc(sz);
+  if(fname == NULL) {
+      fprintf(stderr, "allocation failed in BugsHelper");
+      exit(1);
+  }
+  snprintf(fname, sz, "%s/output%d.txt", tmpdir, cmdno);
   ofp = fopen(fname, "w");
 #ifdef DEBUG
   printf("Writing integer %d to %s\n", out, fname);
@@ -154,8 +169,13 @@ void write_output_real(char *tmpdir, double *out, int len, int cmdno) {
   char *fname;
   FILE *ofp;
   int i;
-  fname = (char *) malloc(strlen(tmpdir) + 16);
-  sprintf(fname, "%s/output%d.txt", tmpdir, cmdno);
+  unsigned int sz = strlen(tmpdir) + 16;
+  fname = (char *) malloc(sz);
+  if(fname == NULL) {
+      fprintf(stderr, "allocation failed in BugsHelper");
+      exit(1);
+  }
+  snprintf(fname, sz, "%s/output%d.txt", tmpdir, cmdno);
   ofp = fopen(fname, "w");
 #ifdef DEBUG
   printf("Writing %d reals to %s\n", len, fname);
@@ -169,8 +189,13 @@ void write_output_real(char *tmpdir, double *out, int len, int cmdno) {
 void write_output_char(char *tmpdir, char *out, int cmdno) {
   char *fname;
   FILE *ofp;
-  fname = (char *) malloc(strlen(tmpdir) + 16);
-  sprintf(fname, "%s/output%d.txt", tmpdir, cmdno);
+  size_t sz = strlen(tmpdir) + 16;
+  fname = (char *) malloc(sz);
+  if(fname == NULL) {
+      fprintf(stderr, "allocation failed in BugsHelper");
+      exit(1);
+  }
+  snprintf(fname, sz, "%s/output%d.txt", tmpdir, cmdno);
 #ifdef DEBUG
   printf("Writing string %s to %s\n", out, fname);
 #endif
@@ -254,11 +279,18 @@ int do_Internalize(char *tmpdir, char *extfile){
   char *extpath, *int_cmd;
   struct stat buf={.st_dev = 0};
   int res;
-  extpath = (char *) malloc(strlen(tmpdir) + 2 + strlen(extfile));
-  sprintf(extpath, "%s/%s", tmpdir, extfile);
+  size_t sz = strlen(tmpdir) + 2 + strlen(extfile);
+  extpath = (char *) malloc(sz);
+  if(extpath == NULL) {
+      fprintf(stderr, "allocation failed in BugsHelper");
+      exit(1);
+  }
+  snprintf(extpath, sz, "%s/%s", tmpdir, extfile);
   if (stat(extpath, &buf) == 0) { /* if file exists */
-    int_cmd = (char *) malloc(strlen(tmpdir) + strlen(extfile) + 66);
-    sprintf(int_cmd, "BugsEmbed.InternalizeModel(\'%s/%s\')", tmpdir, extfile);
+    sz = strlen(tmpdir) + strlen(extfile) + 66;
+    int_cmd = (char *) malloc(sz);
+    snprintf(int_cmd, sz, "BugsEmbed.InternalizeModel(\'%s/%s\')",
+	     tmpdir, extfile);
     res = do_Cmd(int_cmd);
     free(int_cmd);
   }
@@ -270,8 +302,14 @@ int do_Internalize(char *tmpdir, char *extfile){
 int do_Externalize(char *tmpdir, char *extfile){
   char *ext_cmd;
   int res;
-  ext_cmd = (char *) malloc(strlen(tmpdir) + strlen(extfile) + 66);
-  sprintf(ext_cmd, "BugsEmbed.ExternalizeModel(\'%s/%s\')", tmpdir, extfile);
+  size_t sz = strlen(tmpdir) + strlen(extfile) + 66;
+  ext_cmd = (char *) malloc(sz);
+  if(ext_cmd == NULL) {
+      fprintf(stderr, "allocation failed in BugsHelper");
+      exit(1);
+  }
+  snprintf(ext_cmd, sz, "BugsEmbed.ExternalizeModel(\'%s/%s\')",
+	   tmpdir, extfile);
   res = do_Cmd(ext_cmd);
   free(ext_cmd);
   return res;

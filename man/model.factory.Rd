@@ -12,9 +12,9 @@ modelDisable(factory)
 }
 \arguments{
   \item{factory}{Character (length 1) name of the factory to be
-    disabled/enabled, for example \code{"conjugate gamma"}.  See
+    disabled/enabled, for example \code{"conjugate gamma"}.
 
-    \url{http://www.openbugs.net/Manuals/ModelMenu.html#Updateroptions}
+    %%See \url{https://www.openbugs.net/Manuals/ModelMenu.html#Updateroptions}
 
     for more information.  A list of the currently-used updaters
     in a compiled model is given by \code{\link{infoUpdatersbyName}} or
