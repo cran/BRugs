@@ -82,10 +82,8 @@ setwd(oldwd)
 }
 \dontrun{
 # Getting more (online-)help:
-if (is.R())
-  help.BRugs()
-}
-}
+help.BRugs()
+}}
 \keyword{interface}
 \keyword{documentation}
 \concept{OpenBUGS}
